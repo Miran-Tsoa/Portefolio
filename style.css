@@ -1,0 +1,282 @@
+*{
+    color: #ECE6EA;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #0E0C0E;
+    padding: 0;
+}
+
+/*common class*/
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #F0C1CD;
+    opacity: 0.5;
+}
+
+/* header section */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: calc(100% - 10em);
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 5em;
+    background-color: #0e0c0e;
+}
+
+header .menu ul {
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .menu a {
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header .menu a:hover {
+    color: #f17090;
+}
+
+header .menu a:active {
+    color: #f17090;
+}
+
+header .name h1 {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    color: #F0C1CD;
+}
+
+/* about section */
+
+#about {
+    padding: 1em 5em;
+    display: flex;
+    gap: 5em;
+    margin: 4em 0 0 0;
+    height: 450px;
+    align-items: center;
+    scroll-margin-top: 4em;
+}
+
+#about .pic {
+    margin-left: 5em;
+}
+
+#about .pic .picOfme {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0 20% 0 20%;
+  transition: transform 0.4s ease, border-radius 0.4s ease;
+}
+
+#about .pic .picOfme:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+
+#about .welcome h1 {
+    color: #F0C1CD;
+    font-size: 2.5em;
+}
+
+#about .welcome button {
+    margin: 1em 0 0 0;
+    padding: 1em 2em;
+    background-color: #f79ab1;
+    border: none;
+}
+
+#about .welcome button:hover {
+    background-color: #f17090;
+    cursor: pointer;
+}
+
+#about span i {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #F0C1CD;
+    transition: transform 0.2s ease;
+}
+
+#about span i:hover {
+    color: #f17090;
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+/* experience section */
+
+#exp {
+    padding: 0em 5em;
+    scroll-margin-top: 4em;
+}
+
+#exp .expcard {
+    background-color: #1F1C1F;
+    height: 400px;
+    padding: 0.5em 2em;
+    border-radius: 40px;
+}
+
+#exp .expcard .exptitle {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+#exp .expcard .expcontent{
+    display: flex;
+}
+
+.expcard .expcontent .expplace {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.expplace button {
+    padding: 1em 0;
+    background: none;
+    border: none;
+    border-right: 1px solid #ece6ea23;
+}
+
+
+.expplace button:hover {
+    cursor: pointer;
+    background-color: #f0c1cd35;
+}
+
+.expplace button.active {
+    border-right: 2px solid #F0C1CD;
+}
+
+/* education section */
+
+#edu{
+    scroll-margin-top: 4em;
+    padding: 0em 5em;
+    margin: 2em 0 0 0;
+}
+
+#edu .educard {
+    height: 400px;
+    padding: 0.5em 2em;
+}
+
+#edu .educard .edutitle {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+/* prokect section */
+
+#project {
+    scroll-margin-top: 4em;
+    padding: 0em 5em;
+    margin: 2em 0 0 0;
+}
+
+#project .projectcard{
+    height: 600px;
+    padding: 0.5em 2em;
+}
+
+#project .projectcard .projecttitle {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+#project .projectcard .projectcontent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+    gap: 1em;
+}
+
+.projectcontent .item {
+    background-color: #1F1C1F;
+    border-radius: 20%;
+    transition: transform 0.2s ease;
+}
+
+.projectcontent .item:hover {
+    background-color: #f0c1cd35;
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+
+/* skill section */
+
+#skill {
+    margin-top: 10em;
+    padding: 0em 5em;
+    scroll-margin-top: 4em;
+}
+
+#skill .skillcard {
+    background-color: #1F1C1F;
+    height: 400px;
+    padding: 0.5em 2em;
+    border-radius: 40px;
+}
+
+#skill .skillcard .skilltitle {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+/* hobby content */
+
+#hobby {
+    margin-top: 2em;
+    padding: 0em 5em;
+    scroll-margin-top: 4em;
+}
+
+#hobby .hobbycard {
+    height: 400px;
+    padding: 0.5em 2em;
+    border-radius: 40px;
+}
+
+#hobby .hobbycard .hobbytitle {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+/*footer*/
+
+footer {
+    margin: 4em 0 1em 0;
+}
+
+footer p {
+    font-size: 0.7em;
+    color: #f0c1cd35;
+    text-align: center;
+}
