@@ -167,7 +167,7 @@ header .name h1 {
     background-color: #f0c1cd35;
 }
 
-.expplace button.active {
+.expplace button.expactive {
     border-right: 2px solid #F0C1CD;
 }
 
@@ -197,6 +197,52 @@ header .name h1 {
     display: flex;
     gap: 2em;
     align-items: center;
+}
+
+#edu .educard .educontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.educontent .edudate {
+    display: flex;
+    gap: 2em;
+}
+
+.edudate button {
+    background: none;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 40%;
+}
+
+.edudate button:hover {
+    background-color: #f0c1cd35;
+    cursor: pointer;
+    border: #ECE6EA 1px solid;
+}
+
+.edudate button.eduactive {
+    background-color: #F0C1CD;
+    border: #ECE6EA 1px solid;
+    color: #ffffff;
+}
+
+.edudescr .datedescr {
+    width: 700px;
+}
+
+.datedescr h3 {
+    font-size: 1.1em;
+    text-align: center;
+    color: #f0c1cd85;
+}
+
+.datedescr h4 {
+    font-size: 0.9em;
+    text-align: center;
 }
 
 /* prokect section */
