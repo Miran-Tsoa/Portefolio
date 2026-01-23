@@ -10,6 +10,17 @@ body {
 
 /*common class*/
 
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .line {
     flex: 1;
     height: 1px;
@@ -71,7 +82,7 @@ header .name h1 {
     margin: 4em 0 0 0;
     height: 450px;
     align-items: center;
-    scroll-margin-top: 4em;
+    scroll-margin-top: 6em;
 }
 
 #about .pic {
@@ -84,7 +95,8 @@ header .name h1 {
   object-fit: cover;
   object-position: center;
   border-radius: 0 20% 0 20%;
-  transition: transform 0.4s ease, border-radius 0.4s ease;
+  transition: transform 0.4s ease;
+  animation: fadepic 3s ease;
 }
 
 #about .pic .picOfme:hover {
@@ -92,10 +104,22 @@ header .name h1 {
   transform: scale(1.05);
 }
 
+#about .welcome .textwelcome {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
 
-#about .welcome h1 {
+#about .welcome #typewelcome {
     color: #F0C1CD;
     font-size: 2.5em;
+}
+
+.welcome #blink {
+    width: 2px;
+    height: 2.5em;
+    background-color: #F0C1CD;
+    animation: blinkanim 0.6s infinite;
 }
 
 #about .welcome button {
@@ -127,7 +151,7 @@ header .name h1 {
 
 #exp {
     padding: 0em 5em;
-    scroll-margin-top: 4em;
+    scroll-margin-top: 6em;
 }
 
 #exp .expcard {
@@ -159,12 +183,14 @@ header .name h1 {
     background: none;
     border: none;
     border-right: 1px solid #ece6ea23;
+    transition: font-size 0.2s ease, background-color 0.2s ease;
 }
 
 
 .expplace button:hover {
     cursor: pointer;
     background-color: #f0c1cd35;
+    font-size: 1em;
 }
 
 .expplace button.expactive {
@@ -183,7 +209,7 @@ header .name h1 {
 /* education section */
 
 #edu{
-    scroll-margin-top: 4em;
+    scroll-margin-top: 6em;
     padding: 0em 5em;
     margin: 2em 0 0 0;
 }
@@ -221,7 +247,6 @@ header .name h1 {
 .edudate button:hover {
     background-color: #f0c1cd35;
     cursor: pointer;
-    border: #ECE6EA 1px solid;
 }
 
 .edudate button.eduactive {
@@ -254,7 +279,7 @@ header .name h1 {
 }
 
 #project .projectcard{
-    height: 600px;
+    height: 900px;
     padding: 0.5em 2em;
 }
 
@@ -274,8 +299,15 @@ header .name h1 {
 
 .projectcontent .item {
     background-color: #1F1C1F;
-    border-radius: 20%;
+    border-radius: 10%;
     transition: transform 0.2s ease;
+    opacity: 0;
+    transition: opacity 1s ease; transform: translateY(40px);
+}
+
+.projectcontent .item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .projectcontent .item:hover {
@@ -289,7 +321,7 @@ header .name h1 {
 #skill {
     margin-top: 10em;
     padding: 0em 5em;
-    scroll-margin-top: 4em;
+    scroll-margin-top: 6em;
 }
 
 #skill .skillcard {
@@ -310,7 +342,7 @@ header .name h1 {
 #hobby {
     margin-top: 2em;
     padding: 0em 5em;
-    scroll-margin-top: 4em;
+    scroll-margin-top: 6em;
 }
 
 #hobby .hobbycard {
@@ -335,4 +367,17 @@ footer p {
     font-size: 0.7em;
     color: #f0c1cd35;
     text-align: center;
+}
+
+@keyframes blinkanim {
+    50% {background: none;}
+}
+
+@keyframes fadepic {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
 }

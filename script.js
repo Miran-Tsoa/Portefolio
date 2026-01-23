@@ -1,3 +1,44 @@
+// Common JS
+
+const reveals = document.querySelectorAll(".reveal");
+
+const revealAnimation = new IntersectionObserver(
+    conditions => {
+        conditions.forEach(condition => {
+            if (condition.isIntersecting) {
+                condition.target.classList.add("visible");
+            } else {
+                condition.target.classList.remove("visible")
+            };
+        })
+    },
+    {
+        threshold: 0.05
+    }
+);
+
+reveals.forEach(reveal => revealAnimation.observe(reveal));
+
+
+// JS for about section
+
+const welcomeText = "SOYEZ LA BIENVENUE,"
+const welcomeSpeed = 100;
+let index = 0;
+
+const welcomeType = document.getElementById("typewelcome");
+
+function typeEffect() {
+    if (index<welcomeText.length) {
+        welcomeType.textContent+=welcomeText.charAt(index);
+        index++;
+        setTimeout(typeEffect, welcomeSpeed);
+    }
+}
+
+typeEffect();
+
+
 //JS for exp section
 
 const experiences = {
@@ -8,7 +49,7 @@ const experiences = {
     },
     unicef : {
         date : "Octobre 2024 - Novembre 2025",
-        title : "Jeune ambassadrice",
+        title : "Jeune ambassadrice - bénévolat",
         description: "Description of the job"
     }
 };
@@ -101,3 +142,30 @@ function upEdu(eduContent) {
 //init education
 
 upEdu("2026")
+
+
+//JS for project animation
+
+const projects = document.querySelectorAll(".item");
+const projectSection = document.getElementById("project");
+
+const projectAnimation = new IntersectionObserver(
+    conditions => {
+        conditions.forEach(condition => {
+            if (condition.isIntersecting) {
+                projects.forEach((projectItem, index) => {
+                    setTimeout(() => {
+                        projectItem.classList.add("visible");
+                    }, index*300);
+                })
+
+                projectAnimation.unobserve(condition.target);
+            }
+        })
+    },
+    {
+    threshold: 0.2
+    }
+);
+
+projectAnimation.observe(projectSection);
