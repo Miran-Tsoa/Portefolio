@@ -293,15 +293,19 @@ header .name h1 {
 #project .projectcard .projectcontent {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     height: 100%;
     gap: 1em;
 }
 
+
 .projectcontent .item {
+    text-align: center;
     background-color: #1F1C1F;
     border-radius: 10%;
     transition: transform 0.2s ease;
     opacity: 0;
+    padding: 2em;
     transition: opacity 1s ease; transform: translateY(40px);
 }
 
@@ -311,9 +315,20 @@ header .name h1 {
 }
 
 .projectcontent .item:hover {
-    background-color: #f0c1cd35;
+    background-color: #F0C1CD;
     cursor: pointer;
     transform: translateY(-10px);
+}
+
+.projectcontent .item img {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.projectcontent .item h1 {
+    font-size: 1.2em;
 }
 
 /* skill section */
@@ -368,6 +383,69 @@ footer p {
     color: #f0c1cd35;
     text-align: center;
 }
+
+/* popup project */
+
+.popup {
+    display: none;
+}
+
+.popup.active {
+    position: fixed;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #1f1c1fb0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+.popup .projectPopup {
+    background-color: #1F1C1F;
+    width: 70%;
+    height: 80%;
+    padding: 1em 2em;
+    border-radius: 5%;
+    border: 2px solid #F0C1CD;
+}
+
+.popup .projectPopup .popupTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ECE6EA;
+    padding: 0 1em;
+}
+
+.popup .projectPopup #close {
+    font-size: 1.5em;
+    width: 2em;
+    height: 1.5em;
+    text-align: center;
+    border-radius: 30%;
+}
+
+.popup .projectPopup #close:hover {
+    cursor: pointer;
+    background-color: #f17090;
+}
+
+.popup .projectPopup h1 {
+    font-size: 1.5em;
+}
+
+.popup img {
+    height: 100%;
+    width: 8em;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 @keyframes blinkanim {
     50% {background: none;}

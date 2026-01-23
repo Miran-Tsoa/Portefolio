@@ -148,6 +148,12 @@ upEdu("2026")
 
 const projects = document.querySelectorAll(".item");
 const projectSection = document.getElementById("project");
+const projectLists = document.querySelectorAll(".item");
+const popup = document.querySelector(".popup");
+const popupContent = document.querySelector(".projectPopup");
+const close = document.getElementById("close");
+
+//Observer
 
 const projectAnimation = new IntersectionObserver(
     conditions => {
@@ -169,3 +175,23 @@ const projectAnimation = new IntersectionObserver(
 );
 
 projectAnimation.observe(projectSection);
+
+//event listener for popup
+
+projectLists.forEach(projectList => {
+    projectList.addEventListener("click", ()=> {
+        popup.classList.add("active")
+    })
+})
+
+close.addEventListener("click", ()=> {
+    popup.classList.remove("active")
+})
+
+popup.addEventListener("click", ()=> {
+    popup.classList.remove("active")
+})
+
+popupContent.addEventListener("click", (event)=> {
+    event.stopPropagation();
+})
