@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #0E0C0E;
+    background-color: #1E1E2F;
     padding: 0;
 }
 
@@ -42,7 +42,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1em 5em;
-    background-color: #0e0c0e;
+    background-color: #0e0c0ea2;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px)
 }
 
 header .menu ul {
@@ -152,10 +154,11 @@ header .name h1 {
 #exp {
     padding: 0em 5em;
     scroll-margin-top: 6em;
+    margin: 0;
 }
 
 #exp .expcard {
-    background-color: #1F1C1F;
+    background-color: #12121b98;
     height: 400px;
     padding: 0.5em 2em;
     border-radius: 40px;
@@ -183,7 +186,7 @@ header .name h1 {
     background: none;
     border: none;
     border-right: 1px solid #ece6ea23;
-    transition: font-size 0.2s ease, background-color 0.2s ease;
+    transition: font-size 0.2s ease, background-color 0.2s ease, border-right 0.5s ease;
 }
 
 
@@ -242,6 +245,7 @@ header .name h1 {
     border: none;
     padding: 0.5em 1em;
     border-radius: 40%;
+    transition: background-color 0.5s ease;
 }
 
 .edudate button:hover {
@@ -301,28 +305,40 @@ header .name h1 {
 
 .projectcontent .item {
     text-align: center;
-    background-color: #1F1C1F;
+    background-color: #12121b98;
     border-radius: 10%;
     transition: transform 0.2s ease;
     opacity: 0;
-    padding: 2em;
-    transition: opacity 1s ease; transform: translateY(40px);
+    transition: opacity 1s ease, background-color 0.5s ease;
+    overflow: hidden;
+    border: 2px solid #F0C1CD;
 }
 
 .projectcontent .item.visible {
     opacity: 1;
     transform: translateY(0);
+    color: #0E0C0E;
 }
 
 .projectcontent .item:hover {
-    background-color: #F0C1CD;
+    background-color: #ECE6EA;
     cursor: pointer;
+    border: 2px solid #ECE6EA;
     transform: translateY(-10px);
+    box-shadow:  0 0 2px #F0C1CD;
+}
+
+.projectcontent .item:hover * {
+    color: #0E0C0E;
+}
+
+.projectcontent .item .projectpic {
+    background-color: #ECE6EA;
 }
 
 .projectcontent .item img {
     width: 100%;
-    height: 10em;
+    height: 40%;
     object-fit: cover;
     object-position: center;
 }
@@ -340,7 +356,6 @@ header .name h1 {
 }
 
 #skill .skillcard {
-    background-color: #1F1C1F;
     height: 400px;
     padding: 0.5em 2em;
     border-radius: 40px;
@@ -397,7 +412,9 @@ footer p {
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #1f1c1fb0;
+    background-color: #000000a8;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: 100%;
     height: 100%;
     top: 0;
@@ -406,12 +423,12 @@ footer p {
 
 
 .popup .projectPopup {
-    background-color: #1F1C1F;
+    background-color: #1E1E2F;
     width: 70%;
     height: 80%;
     padding: 1em 2em;
+    border: 2px solid #ECE6EA;
     border-radius: 5%;
-    border: 2px solid #F0C1CD;
 }
 
 .popup .projectPopup .popupTitle {
@@ -432,7 +449,6 @@ footer p {
 
 .popup .projectPopup #close:hover {
     cursor: pointer;
-    background-color: #f17090;
 }
 
 .popup .projectPopup h1 {
@@ -458,4 +474,10 @@ footer p {
     100% {
         opacity: 100%;
     }
+}
+
+/* Media screen Tablet */
+
+@media (max-width: 1024px) {
+    
 }

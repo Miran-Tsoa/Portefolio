@@ -13,7 +13,7 @@ const revealAnimation = new IntersectionObserver(
         })
     },
     {
-        threshold: 0.05
+        threshold: 0.1
     }
 );
 
@@ -65,7 +65,7 @@ buttons.forEach(button => {
     button.addEventListener("click", ()=>{
         buttons.forEach(btn => btn.classList.remove("expactive"));
         button.classList.add("expactive");
-        const content = button.dataset.exp;
+        let content = button.dataset.exp;
         upExp(content);
     });
 });
@@ -96,10 +96,15 @@ const educations = {
     2020 : {
         title : "DIPLOME DE BACCALAUREAT - Option Mathematiques et physiques",
         place : "Lycée Gallieni d'Andoalo - Madagascar",
-        description : "Description of 2020 course."
+        description : `
+        <ul>
+            <li>Bases solides en mathématiques appliquées et en physique.</li>
+            <li>Acquisition de méthodes de résolution de problème et de travail scientique.</li>
+        </ul>
+        `
     },
     2023 : {
-        title : "PREPARATION INGENIEUR - scientifiques",
+        title : "CLASSE PREPARATOIRE AUX ECOLES INGENIEUR - scientifiques",
         place : "Ecole Supérieur Polytechnique d'Antananarivo - Madagascar",
         description : "Description of 2023 course."
     },
@@ -126,7 +131,7 @@ eduButtons.forEach(eduButton => {
     eduButton.addEventListener("click", ()=> {
         eduButtons.forEach(edubtn => edubtn.classList.remove("eduactive"));
         eduButton.classList.add("eduactive");
-        const eduContent = eduButton.dataset.edu;
+        let eduContent = eduButton.dataset.edu;
         upEdu(eduContent);
     });
 });
@@ -136,7 +141,7 @@ eduButtons.forEach(eduButton => {
 function upEdu(eduContent) {
     edTitle.textContent = educations[eduContent].title;
     edPlace.textContent = educations[eduContent].place;
-    edDescription.textContent = educations[eduContent].description;
+    edDescription.innerHTML = educations[eduContent].description;
 }
 
 //init education
@@ -146,12 +151,41 @@ upEdu("2026")
 
 //JS for project animation
 
+const Items = {
+    project1: {
+        title : "Administration de Windows Server",
+        description : "Description of the project."
+    },
+    project2: {
+        title : "Administration de Proxmox",
+        description : "Description of the project."
+    },
+    project3: {
+        title: "",
+        description : ""
+    },
+    project4: {
+        title: "",
+        description: "",
+    },
+    project5: {
+        title: "",
+        description: ""
+    },
+    project6: {
+        title: "",
+        description: ""
+    }
+}
+
 const projects = document.querySelectorAll(".item");
 const projectSection = document.getElementById("project");
 const projectLists = document.querySelectorAll(".item");
 const popup = document.querySelector(".popup");
 const popupContent = document.querySelector(".projectPopup");
 const close = document.getElementById("close");
+const popupTitle = document.querySelector(".popupTitle h1");
+const popupDescription = document.querySelector(".popupDescription p");
 
 //Observer
 
@@ -181,6 +215,8 @@ projectAnimation.observe(projectSection);
 projectLists.forEach(projectList => {
     projectList.addEventListener("click", ()=> {
         popup.classList.add("active")
+        let popupItem = projectList.dataset.pro;
+        upPopup(popupItem);
     })
 })
 
@@ -195,3 +231,10 @@ popup.addEventListener("click", ()=> {
 popupContent.addEventListener("click", (event)=> {
     event.stopPropagation();
 })
+
+//function 
+
+function upPopup(popupItem) {
+    popupTitle.textContent = Items[popupItem].title;
+    popupDescription.textContent = Items[popupItem].description;
+}
