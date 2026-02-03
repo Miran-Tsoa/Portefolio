@@ -306,7 +306,7 @@ header .name h1 {
 .projectcontent .item {
     text-align: center;
     background-color: #12121b98;
-    border-radius: 10%;
+    border-radius: 2em;
     transition: transform 0.2s ease;
     opacity: 0;
     transition: opacity 1s ease, background-color 0.5s ease;
@@ -325,7 +325,6 @@ header .name h1 {
     cursor: pointer;
     border: 2px solid #ECE6EA;
     transform: translateY(-10px);
-    box-shadow:  0 0 2px #F0C1CD;
 }
 
 .projectcontent .item:hover * {
@@ -333,7 +332,6 @@ header .name h1 {
 }
 
 .projectcontent .item .projectpic {
-    background-color: #ECE6EA;
     height: 40%;
     border-bottom: 2px #ECE6EA solid;
 }
@@ -358,11 +356,10 @@ header .name h1 {
 }
 
 #skill .skillcard {
-    height: 400px;
     padding: 0.5em 2em;
     border-radius: 40px;
-    background-color: #12121b98;
 }
+
 
 #skill .skillcard .skilltitle {
     display: flex;
@@ -370,9 +367,18 @@ header .name h1 {
     gap: 2em;
 }
 
-.skillcard .skillcontent {
-    overflow-y: auto;
-    height: 300px;
+.skillcard .skillcontent div {
+    background-color: #12121b98;
+    padding: 0.5em;
+    border-radius: 2em;
+    border: 1px solid #f0c1cd1f;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.skillcard .skillcontent div:hover {
+    background-color: #f0c1cd17;
+    transform: translateX(1em);
+    cursor: pointer;
 }
 
 .skillcard .skillcontent h3 {
@@ -462,7 +468,7 @@ footer p {
     height: 80%;
     padding: 1em 2em;
     border: 2px solid #ECE6EA;
-    border-radius: 5%;
+    border-radius: 2em;
 }
 
 .popup .projectPopup .popupTitle {
