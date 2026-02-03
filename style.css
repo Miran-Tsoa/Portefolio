@@ -334,11 +334,13 @@ header .name h1 {
 
 .projectcontent .item .projectpic {
     background-color: #ECE6EA;
+    height: 40%;
+    border-bottom: 2px #ECE6EA solid;
 }
 
 .projectcontent .item img {
     width: 100%;
-    height: 40%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -359,12 +361,44 @@ header .name h1 {
     height: 400px;
     padding: 0.5em 2em;
     border-radius: 40px;
+    background-color: #12121b98;
 }
 
 #skill .skillcard .skilltitle {
     display: flex;
     align-items: center;
     gap: 2em;
+}
+
+.skillcard .skillcontent {
+    overflow-y: auto;
+    height: 300px;
+}
+
+.skillcard .skillcontent h3 {
+    font-size: 1.2em;
+    color: #F0C1CD;
+}
+
+.skillcard .skillcontent ul {
+    list-style: none;
+    padding-left: 2em;
+}
+
+.skillcontent ul li {
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.skillcard ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #f17090;
+}
+
+.skillcard .skillcontent span {
+    color: #f79ab1;
 }
 
 /* hobby content */
