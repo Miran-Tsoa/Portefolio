@@ -106,6 +106,10 @@ header .name h1 {
   transform: scale(1.05);
 }
 
+#about .welcome span {
+    color: #f79ab1;
+}
+
 #about .welcome .textwelcome {
     display: flex;
     gap: 1em;
@@ -114,7 +118,7 @@ header .name h1 {
 
 #about .welcome #typewelcome {
     color: #F0C1CD;
-    font-size: 2.5em;
+    font-size: 2.3em;
 }
 
 .welcome #blink {
@@ -182,18 +186,18 @@ header .name h1 {
 }
 
 .expplace button {
+    font-size: 1em;
     padding: 1em 0;
     background: none;
     border: none;
     border-right: 1px solid #ece6ea23;
-    transition: font-size 0.2s ease, background-color 0.2s ease, border-right 0.5s ease;
+    transition: background-color 0.2s ease, border-right 0.5s ease;
 }
 
 
 .expplace button:hover {
     cursor: pointer;
     background-color: #f0c1cd35;
-    font-size: 1em;
 }
 
 .expplace button.expactive {
@@ -372,7 +376,7 @@ header .name h1 {
     padding: 0.5em;
     border-radius: 2em;
     border: 1px solid #f0c1cd1f;
-    transition: transform 0.5s ease, background-color 0.5s ease;
+    transition: transform 0.2s ease, background-color 0.5s ease;
 }
 
 .skillcard .skillcontent div:hover {
@@ -519,5 +523,148 @@ footer p {
 /* Media screen Tablet */
 
 @media (max-width: 1024px) {
-    
+    header {
+        width: calc(100% - 2em);
+        padding: 1em;
+        gap: 2em;
+        font-size: 0.9em;
+    }
+
+    #about {
+        padding: 1em;
+    }
+
+    #about .pic {
+        margin-left: 1em;
+    }
+
+    #about .welcome #typewelcome {
+        font-size: 1.9em;
+    }
+
+    #exp {
+        padding: 0 1em;
+    }
+
+    #edu {
+        padding: 0 1em;
+    }
+
+    #edu .educard {
+        padding: 0.5em 0;
+    }
+
+    #project {
+        padding: 0 1em;
+    }
+
+    #project .projectcard {
+        padding: 0.5em 0;
+    }
+
+    #skill {
+        padding:  0 1em;
+    }
+
+    #skill .skillcard {
+        padding: 0.5em 0;
+    }
+
+    #hobby {
+        padding: 0 1em;
+    }
+
+    #hobby .hobbycard {
+        padding: 0.5em 0;
+    }
+}
+
+@media (max-width : 768px) {
+    header {
+        font-size: 1em;
+        justify-content: center;
+    }
+
+    header .name h1 {
+        display: none;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    #about {
+        text-align: center;
+    }
+
+    #about .welcome .textwelcome {
+        justify-content: center;
+        margin-top: 5em;
+    }
+
+    #about .pic {
+        display: none;
+    }
+
+    #project .projectcard .projectcontent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #exp {
+        padding: 0;
+    }
+
+    #exp .expcard {
+        border-radius: 0;
+    }
+
+    .edudescr .datedescr {
+        width: 100%;
+    }
+
+
+    .projectcontent .item {
+        flex: 1;
+        display: flex;
+        gap: 2em;
+        transition: transform 0.5s ease;
+    }
+
+    .projectcontent .item:hover {
+        transform: translateY(0);
+        transform: scale(1.02);
+    }
+
+    .projectcontent .item .projectpic {
+        width:  30%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media (max-width : 480px) {
+    header .menu {
+        display: none;
+    }
+
+    header .name h1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #about .welcome #typewelcome {
+        font-size: 1.5em;
+    }
+
+    .projectcontent .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projectcontent .item h1 {
+        font-size: 1.05em;
+    }
 }
