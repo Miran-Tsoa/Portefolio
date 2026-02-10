@@ -13,7 +13,7 @@ const revealAnimation = new IntersectionObserver(
         })
     },
     {
-        threshold: 0.1
+        threshold: 0.2
     }
 );
 
@@ -45,12 +45,30 @@ const experiences = {
     orange: {
         date : "Septembre 2024 - Juillet 2026",
         title : "Technicienne d'intégration - en alternance",
-        description : "Description of the job."
+        description : `
+            <p>Intervention sur le terrain pour mettre en place des solutions réseaux. Transformation des besoins techniques en une installation complète:</p>
+            <ul>
+                <li>Paramètrage <span>complet des équipements réseaux</span>. (switchs, firewall, routeur) </li>
+                <li>Mise en service de <span>solutions de téléphonies IP</span></li>
+                <li><span>Conception et déploiement d'une application web</span> (Stack PHP, JS, HTML/CSS) pour <span>automatiser</span> le suivi des stocks et des licences logiciels.</li>
+                <li>Accompagnement et échange avec les clients.</li>
+                <li>Rédaction de <span>comptes-rendus </span> pour assurer un suivi.</li>
+            </ul>
+            <p>Une expérience qui m'a permis de lier expertise terrain, développement d'outils sur mesure et gestion de la relation client.</p>
+        `
     },
     unicef : {
         date : "Octobre 2024 - Novembre 2025",
         title : "Jeune ambassadrice - bénévolat",
-        description: "Description of the job"
+        description: `
+            <p>Une expérience humaine et formatrice qui m'a permis de développer mes capacités de communicationet d'organisation au service d'une cause internationale au sein de UNICEF FRANCE:</p>
+            <ul>
+                <li><span>Animation d'ateliers</span> et <span>présentation</span> des droits de l'enfant auprès de différents publics.</li>
+                <li><span>Promotion des actions</span> de l'UNICEF lors d'événements locaux.</li>
+                <li><span>Collaboration avec d'autres bénévoles</span> pour mener à bien des projets solidaires.</li>
+            </ul>
+            <p>Un engagement citoyen qui a développé mon autonomie, ma prise de parole en public et mon esprit de collaboration.</p>
+        `
     }
 };
 
@@ -72,20 +90,39 @@ buttons.forEach(button => {
 
 //function 
 
+function animateList() {
+    const listItems = document.querySelectorAll(".jobdescr ul li");
+    listItems.forEach((listItem, index) => {
+        listItem.classList.remove("active");
+
+        setTimeout(() => {
+            listItem.classList.add("active");
+        }, index * 200);
+    });
+}
+
 function upExp (content) {
     jobDate.textContent = experiences[content].date;
     jobtitle.textContent = experiences[content].title;
-    jobdescr.textContent = experiences[content].description;
+    jobdescr.innerHTML = experiences[content].description;
+    animateList();
 };
+
+//observer
+const expObserver = new IntersectionObserver((conditions) => {
+    conditions.forEach(condition => {
+        if (condition.isIntersecting) {
+            animateList();
+            expObserver.unobserve(condition.target);
+        }
+    });
+}, { threshold: 0.2 });
+
+expObserver.observe(jobdescr);
 
 //initialize exp
 
 upExp("orange");
-
-//addAnimation
-
-
-
 
 
 
@@ -96,12 +133,7 @@ const educations = {
     2020 : {
         title : "DIPLOME DE BACCALAUREAT - Option Mathematiques et physiques",
         place : "Lycée Gallieni d'Andoalo - Madagascar",
-        description : `
-        <ul>
-            <li>Bases solides en mathématiques appliquées et en physique.</li>
-            <li>Acquisition de méthodes de résolution de problème et de travail scientique.</li>
-        </ul>
-        `
+        description : "Description of 2020 course."
     },
     2023 : {
         title : "CLASSE PREPARATOIRE AUX ECOLES INGENIEUR - scientifiques",
@@ -169,12 +201,12 @@ const Items = {
         description: "",
     },
     project5: {
-        title: "",
-        description: ""
+        title: "APPLICATION DE GESTION DE STOCK",
+        description: "Description of the project."
     },
     project6: {
-        title: "",
-        description: ""
+        title: "APPLICATION DE GESTION D'ASSURANCE LOGICIEL",
+        description: "Description of the project."
     }
 }
 
@@ -209,6 +241,40 @@ const projectAnimation = new IntersectionObserver(
 );
 
 projectAnimation.observe(projectSection);
+
+
+
+// JS for skill section
+
+const skillContent = document.querySelectorAll(".skillcontent div")
+
+//function
+
+function animateSkill() {
+    skillContent.forEach((listSkill, index) => {
+        listSkill.classList.remove("active");
+        setTimeout(() => {
+            listSkill.classList.add("active");
+        }, index * 300);
+    });
+}
+
+//observer
+
+const skillSection = document.getElementById("skill")
+const skillObserver = new IntersectionObserver((conditions) => {
+    conditions.forEach(condition => {
+        if (condition.isIntersecting) {
+            animateSkill();
+            skillObserver.unobserve(condition.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+skillObserver.observe(skillSection);
+
+
+// JS For popup
 
 //event listener for popup
 

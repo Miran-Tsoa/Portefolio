@@ -10,6 +10,10 @@ body {
 
 /*common class*/
 
+p span, li span {
+    color: #f79ab1;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -106,9 +110,6 @@ header .name h1 {
   transform: scale(1.05);
 }
 
-#about .welcome span {
-    color: #f79ab1;
-}
 
 #about .welcome .textwelcome {
     display: flex;
@@ -163,7 +164,6 @@ header .name h1 {
 
 #exp .expcard {
     background-color: #12121b98;
-    height: 400px;
     padding: 0.5em 2em;
     border-radius: 40px;
 }
@@ -182,10 +182,10 @@ header .name h1 {
 .expcard .expcontent .expplace {
     display: flex;
     flex-direction: column;
-    width: 20%;
 }
 
 .expplace button {
+    width: 10em;
     font-size: 1em;
     padding: 1em 0;
     background: none;
@@ -193,7 +193,6 @@ header .name h1 {
     border-right: 1px solid #ece6ea23;
     transition: background-color 0.2s ease, border-right 0.5s ease;
 }
-
 
 .expplace button:hover {
     cursor: pointer;
@@ -206,11 +205,43 @@ header .name h1 {
 
 .expdescription .jobdate {
     font-size: 1em;
-    color: #f0c1cd85;
+    color: #f0c1cdab;
 }
 
 .expdescription .jobtitle {
-    font-size: 1em;
+    font-size: 1.1em;
+    color: #f79ab1;
+}
+
+.jobdescr ul {
+    list-style: none;
+    padding-left: 2em;
+}
+
+.jobdescr ul li {
+    position: relative;
+    padding-left: 1.5em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.jobdescr ul li.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.jobdescr ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #f17090;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.jobdescr ul li.active::before {
+    opacity: 1;
 }
 
 /* education section */
@@ -270,10 +301,11 @@ header .name h1 {
 .datedescr h3 {
     font-size: 1.1em;
     text-align: center;
-    color: #f0c1cd85;
+    color: #f79ab1;
 }
 
 .datedescr h4 {
+    color: #f0c1cdab;
     font-size: 0.9em;
     text-align: center;
 }
@@ -372,17 +404,25 @@ header .name h1 {
 }
 
 .skillcard .skillcontent div {
+    opacity: 0;
+    transform: translateY(60px);
     background-color: #12121b98;
     padding: 0.5em;
     border-radius: 2em;
     border: 1px solid #f0c1cd1f;
-    transition: transform 0.2s ease, background-color 0.5s ease;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-.skillcard .skillcontent div:hover {
+.skillcard .skillcontent div.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skillcard .skillcontent div.active:hover {
     background-color: #f0c1cd17;
     transform: translateX(1em);
     cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .skillcard .skillcontent h3 {
@@ -390,45 +430,22 @@ header .name h1 {
     color: #F0C1CD;
 }
 
-.skillcard .skillcontent ul {
+.skillcontent .star {
     list-style: none;
     padding-left: 2em;
 }
 
-.skillcontent ul li {
+
+.skillcontent .star li {
     position: relative;
     padding-left: 1.5em;
 }
 
-.skillcard ul li::before {
+.skillcontent .star li::before {
     content: "▸";
     position: absolute;
     left: 0;
     color: #f17090;
-}
-
-.skillcard .skillcontent span {
-    color: #f79ab1;
-}
-
-/* hobby content */
-
-#hobby {
-    margin-top: 2em;
-    padding: 0em 5em;
-    scroll-margin-top: 6em;
-}
-
-#hobby .hobbycard {
-    height: 400px;
-    padding: 0.5em 2em;
-    border-radius: 40px;
-}
-
-#hobby .hobbycard .hobbytitle {
-    display: flex;
-    align-items: center;
-    gap: 2em;
 }
 
 /*footer*/
@@ -497,13 +514,7 @@ footer p {
 
 .popup .projectPopup h1 {
     font-size: 1.5em;
-}
-
-.popup img {
-    height: 100%;
-    width: 8em;
-    object-fit: cover;
-    object-position: center;
+    color: #f79ab1;
 }
 
 
@@ -619,10 +630,28 @@ footer p {
         border-radius: 0;
     }
 
+    #exp .expcard .expcontent{
+        flex-direction: column;
+    }
+
+    .expcard .expcontent .expplace {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .expplace button {
+        border-right: none;
+        border-bottom: 1px solid #ece6ea23;
+    }
+
+    .expplace button.expactive {
+        border-right: none;
+        border-bottom: 2px solid #F0C1CD;
+    }
+
     .edudescr .datedescr {
         width: 100%;
     }
-
 
     .projectcontent .item {
         flex: 1;
@@ -658,13 +687,5 @@ footer p {
         font-size: 1.5em;
     }
 
-    .projectcontent .item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .projectcontent .item h1 {
-        font-size: 1.05em;
-    }
+    
 }
