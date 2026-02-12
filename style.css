@@ -253,7 +253,7 @@ header .name h1 {
 }
 
 #edu .educard {
-    height: 400px;
+    height: auto;
     padding: 0.5em 2em;
 }
 
@@ -273,6 +273,8 @@ header .name h1 {
 .educontent .edudate {
     display: flex;
     gap: 2em;
+    align-items: center; /* Centre les boutons et les traits verticalement */
+    position: relative;
 }
 
 .edudate button {
@@ -281,6 +283,20 @@ header .name h1 {
     padding: 0.5em 1em;
     border-radius: 40%;
     transition: background-color 0.5s ease;
+    position: relative; 
+    z-index: 2; 
+}
+
+.edudate button:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    left: 100%; 
+    width: 2em; 
+    height: 2px; 
+    background-color: #f0c1cd45; 
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 .edudate button:hover {
@@ -310,7 +326,31 @@ header .name h1 {
     text-align: center;
 }
 
-/* prokect section */
+.datedescr .eddescription {
+    border-left: 2px solid #F0C1CD;
+    padding-left: 20px;
+    margin-left: 10px;
+    position: relative;
+    text-align: left;
+}
+
+.dipdescr {
+    position: relative;
+    margin-bottom: 1.5em;
+}
+
+.dipdescr::before {
+    content: "";
+    position: absolute;
+    left: -27px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #ECE6EA;
+    border-radius: 50%;
+}
+
+/* project section */
 
 #project {
     scroll-margin-top: 4em;
@@ -426,7 +466,7 @@ header .name h1 {
 }
 
 .skillcard .skillcontent h3 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #F0C1CD;
 }
 
@@ -617,11 +657,6 @@ footer p {
         display: none;
     }
 
-    #project .projectcard .projectcontent {
-        display: flex;
-        flex-direction: column;
-    }
-
     #exp {
         padding: 0;
     }
@@ -642,6 +677,7 @@ footer p {
     .expplace button {
         border-right: none;
         border-bottom: 1px solid #ece6ea23;
+        transition: border-bottom 0.5s ease;
     }
 
     .expplace button.expactive {
@@ -651,6 +687,11 @@ footer p {
 
     .edudescr .datedescr {
         width: 100%;
+    }
+
+    #project .projectcard .projectcontent {
+        display: flex;
+        flex-direction: column;
     }
 
     .projectcontent .item {
@@ -674,18 +715,8 @@ footer p {
 }
 
 @media (max-width : 480px) {
-    header .menu {
-        display: none;
-    }
-
-    header .name h1 {
-        display: flex;
-        justify-content: center;
-    }
 
     #about .welcome #typewelcome {
         font-size: 1.5em;
     }
-
-    
 }
