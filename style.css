@@ -129,14 +129,17 @@ header .name h1 {
     animation: blinkanim 0.6s infinite;
 }
 
-#about .welcome button {
+#about .welcome .CV {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.85em;
     margin: 1em 0 0 0;
     padding: 1em 2em;
     background-color: #f79ab1;
     border: none;
 }
 
-#about .welcome button:hover, #about .welcome button:active {
+#about .welcome .CV:hover, #about .welcome .CV:active {
     background-color: #f17090;
     cursor: pointer;
 }

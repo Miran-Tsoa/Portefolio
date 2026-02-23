@@ -199,16 +199,16 @@ upEdu("2026")
 
 const Items = {
     project1: {
-        title : "Administration de Windows Server",
+        title : "Configuration de JUPITER",
         description : "Description of the project."
     },
     project2: {
-        title : "Administration de Proxmox",
+        title : "Administration de Windows Server",
         description : "Description of the project."
     },
     project3: {
-        title: "",
-        description : ""
+        title: "Administration de Proxmox",
+        description : "Description of the project."
     },
     project4: {
         title: "",
