@@ -17,7 +17,6 @@ const revealAnimation = new IntersectionObserver(
 
 reveals.forEach(reveal => revealAnimation.observe(reveal));
 
-
 // JS for about section
 
 const welcomeText = "SOYEZ LA BIENVENUE,"
