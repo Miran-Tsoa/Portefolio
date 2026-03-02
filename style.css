@@ -5,7 +5,18 @@
 
 body {
     background-color: #1E1E2F;
+    margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.page-wrapper {
+    max-width: 1200px; /* Largeur idéale pour un portfolio moderne */
+    margin: 0 auto;    /* Centre le bloc horizontalement */
+    width: 100%;       /* Indispensable pour le responsive mobile */
 }
 
 /*common class*/
@@ -702,6 +713,7 @@ footer p {
         display: flex;
         gap: 2em;
         transition: transform 0.5s ease;
+        text-align: left;
     }
 
     .projectcontent .item:hover {
@@ -715,11 +727,35 @@ footer p {
         object-fit: cover;
         object-position: center;
     }
+
+    .popup .projectPopup #close {
+        font-size: 1em;
+    }
+
+    .popup .projectPopup h1 {
+        font-size: 1em;
+    }
 }
 
 @media (max-width : 480px) {
 
+    header .menu {
+        display: none;
+    }
+
+    header .name h1 {
+        display: flex;
+    }
+
     #about .welcome #typewelcome {
         font-size: 1.5em;
+    }
+    
+    .projectcontent .item h1 {
+        font-size: 1em;
+    }
+
+    .projectcontent .item p {
+        font-size: 0.9em;
     }
 }
