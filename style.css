@@ -177,7 +177,7 @@ header .name h1 {
 }
 
 #exp .expcard {
-    background-color: #12121b98;
+    background-color: #12121bec;
     padding: 0.5em 2em;
     border-radius: 40px;
 }
@@ -424,13 +424,13 @@ header .name h1 {
     bottom: 0;
     background-size: cover;
     background-position: center;
-    opacity: 0.1;
+    opacity: 0.05;
     z-index: 0;
     transition: transform 0.5s ease;
 }
 
 .CarouselItem .Item:hover .ItemBackground {
-    opacity: 0.3;
+    opacity: 0.15;
 }
 
 .CarouselItem .Item .Itemcontent {
@@ -833,6 +833,10 @@ footer p {
 
     .edudescr .datedescr {
         width: 100%;
+    }
+
+    .CarouselItem .Item .ItemBackground {
+        opacity: 0;
     }
 }
 

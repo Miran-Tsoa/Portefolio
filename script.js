@@ -79,11 +79,11 @@ const jobdescr = document.querySelector(".jobdescr");
 //event listener
 
 buttons.forEach(button => {
-    button.addEventListener("click", ()=>{
+    button.addEventListener("click", () => {
         buttons.forEach(btn => btn.classList.remove("expactive"));
         button.classList.add("expactive");
         let content = button.dataset.exp;
-        upExp(content);
+        upExp(content, true);
     });
 });
 
@@ -100,18 +100,23 @@ function animateList() {
     });
 }
 
-function upExp (content) {
+function upExp(content, animate = false) {
     jobDate.textContent = experiences[content].date;
     jobtitle.textContent = experiences[content].title;
     jobdescr.innerHTML = experiences[content].description;
-    animateList();
-};
+    if (animate) {
+        requestAnimationFrame(() => {
+            animateList();
+        });
+    }
+}
 
 //observer
 const expObserver = new IntersectionObserver((conditions) => {
     conditions.forEach(condition => {
         if (condition.isIntersecting) {
-            animateList();
+            // C'est ICI que l'animation se lance enfin quand l'élément apparaît !
+            animateList(); 
             expObserver.unobserve(condition.target);
         }
     });
@@ -119,9 +124,8 @@ const expObserver = new IntersectionObserver((conditions) => {
 
 expObserver.observe(jobdescr);
 
-//initialize exp
-
-upExp("orange");
+// init exp function
+upExp("orange", false);
 
 
 
