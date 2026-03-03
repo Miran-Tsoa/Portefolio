@@ -95,54 +95,48 @@
                         <h2>MES PROJETS</h2>
                         <span class="line"></span>
                     </div>
-                    <div class="projectcontent">
-                        <div class="item" data-pro="project1">
-                            <div class="projectpic">
-                                <img src="asset/Jupiter.jpg" alt="Jupiter Logo">
+                    <div class="carouselContent">
+                        <button class="Btncarousel prev">&#10094;</button>
+                        <button class="Btncarousel next">&#10095;</button>
+
+                        <div class="CarouselItem" id="projectItem">
+
+                            <div class="Item">
+                                <div class="ItemBackground" style="background-image: url('asset/Jupiter.jpg');"></div>
+                                <div class="Itemcontent">
+                                    <h1>CONFIGURATION DE JUPITER</h1>
+                                    <p>Description du projet. <br> Voir plus...</p>
+                                    <p class="techskill">RÉSEAUX - SYSTÈME - SÉCURITÉ</p>
+                                    <a href="#">Télécharger le support</a> 
+                                </div>
                             </div>
-                            <div>
-                                <h1>Configuration de JUPITER</h1>
-                                <p>Descrition du projet. <br> Voir plus...</p>
+
+                            <div class="Item">
+                                <div class="ItemBackground" style="background-image: url('asset/gestionStock.jpg');"></div>
+                                <div class="Itemcontent">
+                                    <h1>GESTION DE STOCK</h1>
+                                    <p>Description du projet. <br> Voir plus...</p>
+                                    <p class="techskill">PHP - MYSQL - JS - Conception BDD</p>
+                                    <a href="#">Télécharger le support</a> 
+                                </div>
                             </div>
-                        </div>
-                        <div class="item" data-pro="project2">
-                            <div class="projectpic">
-                                <img src="asset/winServLogo.jpg" alt="Windows Server Logo">
+
+                            <div class="Item">
+                                <div class="ItemBackground" style="background-image: url('asset/assurance.jpg');"></div>
+                                <div class="Itemcontent">
+                                    <h1>GESTION D'ASSURANCE LOGICIEL</h1>
+                                    <p>Description du projet. <br> Voir plus...</p>
+                                    <p class="techskill">PHP - MySQL - JS - Conception BDD</p>
+                                    <a href="#">Télécharger le support</a> 
+                                </div>
                             </div>
-                            <div>
-                                <h1>Administration de WINDOWS SERVER</h1>
-                                <p>Descrition du projet. <br> Voir plus...</p>
+
+                            <div class="carouselIndic">
+                                <span class="indic active"></span>
+                                <span class="indic"></span>
+                                <span class="indic"></span>
                             </div>
-                        </div>
-                        <div class="item" data-pro="project3">
-                            <div class="projectpic">
-                                <img src="asset/proxmox1.jpg" alt="PROXMOX Logo">
-                            </div>
-                            <div>
-                                <h1>Administration de PROXMOX</h1>
-                                <p>Descrition du projet. <br> Voir plus...</p>
-                            </div>
-                        </div>
-                        <div class="item" data-pro="project4">
-                            
-                        </div>
-                        <div class="item" data-pro="project5">
-                            <div class="projectpic">
-                                <img src="asset/gestionStock.jpg" alt="Windows Server Logo">
-                            </div>
-                            <div>
-                                <h1>GESTION DE STOCK</h1>
-                                <p>Descrition du projet. <br> Voir plus...</p>
-                            </div>
-                        </div>
-                        <div class="item" data-pro="project6">
-                            <div class="projectpic">
-                                <img src="asset/assurance.jpg" alt="Windows Server Logo">
-                            </div>
-                            <div>
-                                <h1>GESTION D'ASSURANCE LOGICIEL</h1>
-                                <p>Descrition du projet. <br> Voir plus...</p>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -192,6 +186,7 @@
                                 <h1>CYBERSECURITE</h1>
                                 <p>Afin d'assurer la résilience des systèmes face à des menaces en constante mutation. <br>
                                 Veilles sur les vulnerabilités, Analyse des menaces et les conformités avec l'ANSSI.</p>
+                                <a href="https://www.pearltrees.com/miranetsoa/veille-cybersecurite/id102630967" target="_blank" rel="noopener noreferrer">Sources</a>
                             </div>
                         </div>
                         <div class="techitem">
@@ -202,6 +197,7 @@
                                 <h1>CLOUD & AUTOMATISATION</h1>
                                 <p>Accompagnement de la transformation digitale par le déploiement d'infrastructures hybrides et scalables.<br>
                                 Services Microsoft Azure et gestion des configurations avec Ansible</p>
+                                <a href="https://www.pearltrees.com/miranetsoa/cloud-et-automatisation/id102630983" target="_blank" rel="noopener noreferrer">Sources</a>
                             </div>
                         </div>
                         <div class="techitem">
@@ -212,6 +208,7 @@
                                 <h1>RESEAUX & OBSERVABILITE</h1>
                                 <p>L'objectif est d'assurer la confidentialité des échanges et une supervision proactive de l'état des infrastructures. <br>
                                 VLANs et segmentation, les services d'infrastructure DHCP/DNS, WLAN et sécurité sans fil.</p>
+                                <a href="https://www.pearltrees.com/miranetsoa/reseau-et-supervision/id102631021" target="_blank" rel="noopener noreferrer">Sources</a>
                             </div>
                         </div>
                     </div>
@@ -221,19 +218,6 @@
             <footer>
                 <p>&copy; 2026 - Miran RAKOTOARIMANANA. Tous droits réservés. <br> Conçu et développé par moi même.</p>
             </footer>
-
-            <div class="popup">
-                <div class="projectPopup">
-                    <div class="popupTitle">
-                        <h1></h1>
-                        <p id="close">X</p>
-
-                    </div>
-                    <div class="popupDescription">
-                        <p></p>
-                    </div>
-                </div>
-            </div>
         </div>
     </body>
 </html>

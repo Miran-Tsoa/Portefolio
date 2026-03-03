@@ -198,66 +198,42 @@ upEdu("2026")
 
 //JS for project animation
 
-const Items = {
-    project1: {
-        title : "Configuration de JUPITER",
-        description : "Description of the project."
-    },
-    project2: {
-        title : "Administration de Windows Server",
-        description : "Description of the project."
-    },
-    project3: {
-        title: "Administration de Proxmox",
-        description : "Description of the project."
-    },
-    project4: {
-        title: "",
-        description: "",
-    },
-    project5: {
-        title: "APPLICATION DE GESTION DE STOCK",
-        description: "Description of the project."
-    },
-    project6: {
-        title: "APPLICATION DE GESTION D'ASSURANCE LOGICIEL",
-        description: "Description of the project."
-    }
-}
+const projectItem = document.getElementById('projectItem');
+const prevBtn = document.querySelector('.Btncarousel.prev');
+const nextBtn = document.querySelector('.Btncarousel.next');
+const indics = document.querySelectorAll('.indic');
 
-const projects = document.querySelectorAll(".item");
-const projectSection = document.getElementById("project");
-const projectLists = document.querySelectorAll(".item");
-const popup = document.querySelector(".popup");
-const popupContent = document.querySelector(".projectPopup");
-const close = document.getElementById("close");
-const popupTitle = document.querySelector(".popupTitle h1");
-const popupDescription = document.querySelector(".popupDescription p");
+//Event listener
 
-//Observer
+nextBtn.addEventListener('click', () => {
+    const slideWidth = projectItem.clientWidth;
+    projectItem.scrollBy({ 
+        left: slideWidth, 
+        behavior: 'smooth'
+    });
+});
 
-const projectAnimation = new IntersectionObserver(
-    conditions => {
-        conditions.forEach(condition => {
-            if (condition.isIntersecting) {
-                projects.forEach((projectItem, index) => {
-                    setTimeout(() => {
-                        projectItem.classList.add("visible");
-                    }, index*300);
-                })
+prevBtn.addEventListener('click', () => {
+    const slideWidth = projectItem.clientWidth;
+    projectItem.scrollBy({ 
+        left: -slideWidth,
+        behavior: 'smooth' 
+    });
+});
 
-                projectAnimation.unobserve(condition.target);
-            }
-        })
-    },
-    {
-    threshold: 0.2
-    }
-);
+projectItem.addEventListener('scroll', () => {
+    const scrollPosition = projectItem.scrollLeft;
+    const slideWidth = projectItem.clientWidth;
+    const currentIndex = Math.round(scrollPosition / slideWidth);
 
-projectAnimation.observe(projectSection);
-
-
+    indics.forEach((indic, index) => {
+        if (index === currentIndex) {
+            indic.classList.add('active');
+        } else {
+            indic.classList.remove('active');
+        }
+    });
+});
 
 // JS for skill section
 
@@ -287,35 +263,3 @@ const skillObserver = new IntersectionObserver((conditions) => {
 }, { threshold: 0.5 });
 
 skillObserver.observe(skillSection);
-
-
-// JS For popup
-
-//event listener for popup
-
-projectLists.forEach(projectList => {
-    projectList.addEventListener("click", ()=> {
-        popup.classList.add("active")
-        let popupItem = projectList.dataset.pro;
-        upPopup(popupItem);
-    })
-})
-
-close.addEventListener("click", ()=> {
-    popup.classList.remove("active")
-})
-
-popup.addEventListener("click", ()=> {
-    popup.classList.remove("active")
-})
-
-popupContent.addEventListener("click", (event)=> {
-    event.stopPropagation();
-})
-
-//function 
-
-function upPopup(popupItem) {
-    popupTitle.textContent = Items[popupItem].title;
-    popupDescription.textContent = Items[popupItem].description;
-}

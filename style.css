@@ -384,57 +384,150 @@ header .name h1 {
     margin-bottom: 2em;
 }
 
-#project .projectcard .projectcontent {
+.carouselContent {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 2em;
+    overflow: hidden;
+    background-color: #12121b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.CarouselItem {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.CarouselItem::-webkit-scrollbar {
+    display: none;
+}
+
+.CarouselItem .Item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
+.CarouselItem .Item .ItemBackground {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+    transition: transform 0.5s ease;
+}
 
-.projectcontent .item {
-    width: 300px;
-    height: 400px;
+.CarouselItem .Item:hover .ItemBackground {
+    opacity: 0.3;
+}
+
+.CarouselItem .Item .Itemcontent {
+    position: relative;
+    z-index: 1;
     text-align: center;
-    background-color: #12121b98;
-    border-radius: 2em;
-    transition: transform 0.2s ease, opacity 1s ease, background-color 0.5s ease;
+    padding: 40px;
+    color: #ECE6EA;
+}
+
+.CarouselItem .Item .Itemcontent h1 {
+    font-size: 2.5rem;
+    color: #F0C1CD;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.CarouselItem .Item .Itemcontent .techskill {
+    color: #f79ab1;
+    font-weight: bold;
+    margin-top: 25px;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.Item .Itemcontent a {
+    display: inline-block;
     opacity: 0;
-    overflow: hidden;
-    border: 2px solid #F0C1CD;
+    visibility: hidden;
+    transform: translateY(10px);
+    text-decoration: 0;
+    padding: 0.5em 1em;
+    border: 1.3px solid #ECE6EA;
+    transition: all 0.5s ease;
+    border-radius: 2em;
+    margin-top: 30px;
 }
 
-.projectcontent .item.visible {
+.Item:hover a {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
-    color: #0E0C0E;
 }
 
-.projectcontent .item:hover {
+.Item a:hover {
     background-color: #ECE6EA;
-    cursor: pointer;
-    border: 2px solid #ECE6EA;
-    transform: translateY(-10px);
-}
-
-.projectcontent .item:hover * {
     color: #0E0C0E;
 }
 
-.projectcontent .item .projectpic {
-    height: 40%;
-    border-bottom: 2px #ECE6EA solid;
+.carouselContent .Btncarousel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: 1px solid rgba(240, 193, 205, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.projectcontent .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+.carouselContent .Btncarousel:hover { 
+    background: #F0C1CD; 
+    color: #12121b;
 }
 
-.projectcontent .item h1 {
-    font-size: 1.2em;
+.carouselContent .Btncarousel.prev { left: 20px; }
+.carouselContent .Btncarousel.next { right: 20px; }
+
+.carouselContent .carouselIndic {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carouselIndic .indic {
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.carouselIndic .indic.active {
+    background: #F0C1CD;
 }
 
 /* skill section */
@@ -568,12 +661,35 @@ header .name h1 {
     justify-content: center;
 }
 
+.techitem .techdescr a {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    text-decoration: 0;
+    padding: 0.5em 1em;
+    border: 1.3px solid #ECE6EA;
+    transition: all 0.5s ease;
+    margin-top: 30px;
+    border-radius: 2em;
+}
+
 .techitem .techdescr:hover {
     background: linear-gradient(
         to bottom, 
         rgba(0, 0, 0, 0.2) 10%, 
         rgba(0, 0, 0, 0.4) 100%
     )
+}
+
+.techitem .techdescr:hover a {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.techdescr a:hover {
+    background-color: #ECE6EA;
+    color: #0E0C0E;
 }
 
 /*footer*/
@@ -587,64 +703,6 @@ footer p {
     color: #f0c1cd35;
     text-align: center;
 }
-
-/* popup project */
-
-.popup {
-    display: none;
-}
-
-.popup.active {
-    position: fixed;
-    z-index: 2000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: #000000a8;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-
-.popup .projectPopup {
-    background-color: #1E1E2F;
-    width: 70%;
-    height: 80%;
-    padding: 1em 2em;
-    border: 2px solid #ECE6EA;
-    border-radius: 2em;
-}
-
-.popup .projectPopup .popupTitle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ECE6EA;
-    padding: 0 1em;
-}
-
-.popup .projectPopup #close {
-    font-size: 1.5em;
-    width: 2em;
-    height: 1.5em;
-    text-align: center;
-    border-radius: 30%;
-}
-
-.popup .projectPopup #close:hover {
-    cursor: pointer;
-}
-
-.popup .projectPopup h1 {
-    font-size: 1.5em;
-    color: #f79ab1;
-}
-
 
 @keyframes blinkanim {
     50% {background: none;}
@@ -775,18 +833,6 @@ footer p {
 
     .edudescr .datedescr {
         width: 100%;
-    }
-
-    .projectcontent .item:hover {
-        transform: none;
-    }
-
-    .popup .projectPopup #close {
-        font-size: 1em;
-    }
-
-    .popup .projectPopup h1 {
-        font-size: 1.1em;
     }
 }
 
