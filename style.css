@@ -13,10 +13,10 @@ html {
     scroll-behavior: smooth;
 }
 
-.page-wrapper {
-    max-width: 1200px; /* Largeur idéale pour un portfolio moderne */
-    margin: 0 auto;    /* Centre le bloc horizontalement */
-    width: 100%;       /* Indispensable pour le responsive mobile */
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 /*common class*/
@@ -373,7 +373,7 @@ header .name h1 {
 }
 
 #project .projectcard{
-    height: 900px;
+    height: auto;
     padding: 0.5em 2em;
 }
 
@@ -385,21 +385,21 @@ header .name h1 {
 }
 
 #project .projectcard .projectcontent {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1em;
+    justify-content: center;
 }
 
 
 .projectcontent .item {
+    width: 300px;
+    height: 400px;
     text-align: center;
     background-color: #12121b98;
     border-radius: 2em;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, opacity 1s ease, background-color 0.5s ease;
     opacity: 0;
-    transition: opacity 1s ease, background-color 0.5s ease;
     overflow: hidden;
     border: 2px solid #F0C1CD;
 }
@@ -440,7 +440,7 @@ header .name h1 {
 /* skill section */
 
 #skill {
-    margin-top: 10em;
+    margin-top: 4em;
     padding: 0em 5em;
     scroll-margin-top: 6em;
 }
@@ -500,6 +500,80 @@ header .name h1 {
     position: absolute;
     left: 0;
     color: #f17090;
+}
+
+/* Technology section */
+
+#technology {
+    margin-top: 4em;
+    padding: 0em 5em;
+    scroll-margin-top: 6em;
+}
+
+#technology .techcard {
+    height: auto;
+    padding: 0.5em 2em;
+}
+
+#technology .techcard .techtitle {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.techcard .techcontent {
+    display: flex;
+    flex-wrap: wrap;
+    height: 80%;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.techcard .techcontent .techitem {
+    position: relative;
+    min-width: 300px;
+    width: 300px;
+    min-height: 400px;
+    height: 400px;
+    text-align: center;
+    background-color: #12121b98;
+    border-radius: 2em;
+    overflow: hidden;
+    border: 2px solid #F0C1CD;
+    width: 30%;
+}
+
+.techitem .techimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.techitem .techdescr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.4) 10%, 
+        rgba(0, 0, 0, 0.9) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.techitem .techdescr:hover {
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.2) 10%, 
+        rgba(0, 0, 0, 0.4) 100%
+    )
 }
 
 /*footer*/
@@ -635,13 +709,13 @@ footer p {
         padding: 0.5em 0;
     }
 
-    #hobby {
+    #technology {
         padding: 0 1em;
     }
 
-    #hobby .hobbycard {
+    #technology .techcard {
         padding: 0.5em 0;
-    }
+    }   
 }
 
 @media (max-width : 768px) {
@@ -703,29 +777,8 @@ footer p {
         width: 100%;
     }
 
-    #project .projectcard .projectcontent {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .projectcontent .item {
-        flex: 1;
-        display: flex;
-        gap: 2em;
-        transition: transform 0.5s ease;
-        text-align: left;
-    }
-
     .projectcontent .item:hover {
-        transform: translateY(0);
-        transform: scale(1.02);
-    }
-
-    .projectcontent .item .projectpic {
-        width:  30%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+        transform: none;
     }
 
     .popup .projectPopup #close {
@@ -733,7 +786,7 @@ footer p {
     }
 
     .popup .projectPopup h1 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }
 
@@ -749,13 +802,5 @@ footer p {
 
     #about .welcome #typewelcome {
         font-size: 1.5em;
-    }
-    
-    .projectcontent .item h1 {
-        font-size: 1em;
-    }
-
-    .projectcontent .item p {
-        font-size: 0.9em;
     }
 }

@@ -10,187 +10,230 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div class="page-wrapper">
-        <header>
-            <div class="menu">
-                <ul>
-                    <li><a href="#about">A propos</a></li>
-                    <li><a href="#exp">Expérience</a></li>
-                    <li><a href="#edu">Diplôme</a></li>
-                    <li><a href="#project">Projets</a></li>
-                    <li><a href="#skill">Compétences</a></li>
-                </ul>
-            </div>
-            <div class="name"> 
-                <h1>Miran RAKOTOARIMANANA</h1> 
-            </div>
-        </header>
+        <div class="wrap">
+            <header>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#about">Moi</a></li>
+                        <li><a href="#exp">Expérience</a></li>
+                        <li><a href="#edu">Diplôme</a></li>
+                        <li><a href="#project">Projets</a></li>
+                        <li><a href="#skill">Compétences</a></li>
+                        <li><a href="#technology">Veilles</a></li>
+                    </ul>
+                </div>
+                <div class="name"> 
+                    <h1>Miran RAKOTOARIMANANA</h1> 
+                </div>
+            </header>
 
-        <section id="about">
-            <div class="pic">
-                <img src="asset/profil.jpg" alt="picture of me" class="picOfme">
-            </div>
-            <div class="welcome">
-                <div class="textwelcome">
-                    <h1 id="typewelcome"></h1>
-                    <span id="blink"></span>
+            <section id="about">
+                <div class="pic">
+                    <img src="asset/profil.jpg" alt="picture of me" class="picOfme">
                 </div>
-                <p>Enchanté, moi c'est <strong><span>Miran</span></strong>! <br> Etudiante en <span>système</span> et <span>réseau</span>, je suis curieuse de comprendre comment se construit le monde informatique de demain.</p>
-                <a href="asset/CV.pdf" target="_blank" download="CV.pdf" class="CV"> <b> Télécharger mon CV </b></a>
-                <p>Ou contactez moi sur: <span><a href="mailto:rakotoarimananamirantsoa2@gmail.com"><i class="fa-solid fa-envelope"></i></a><a href="https://www.linkedin.com/in/miran-tsoa-rakotoarimanana-9b8a36318" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/Miran-Tsoa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></span></p>
-            </div>
-        </section>
+                <div class="welcome">
+                    <div class="textwelcome">
+                        <h1 id="typewelcome"></h1>
+                        <span id="blink"></span>
+                    </div>
+                    <p>Enchanté, moi c'est <strong><span>Miran</span></strong>! <br> Etudiante en <span>système</span> et <span>réseau</span>, je suis curieuse de comprendre comment se construit le monde informatique de demain.</p>
+                    <a href="asset/CV.pdf" target="_blank" download="CV.pdf" class="CV"> <b> Télécharger mon CV </b></a>
+                    <p>Ou contactez moi sur: <span><a href="mailto:rakotoarimananamirantsoa2@gmail.com"><i class="fa-solid fa-envelope"></i></a><a href="https://www.linkedin.com/in/miran-tsoa-rakotoarimanana-9b8a36318" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/Miran-Tsoa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></span></p>
+                </div>
+            </section>
 
-        <section id="exp" class="reveal">
-            <div class="expcard">
-                <div class="exptitle">
-                    <span class="line"></span>
-                    <h2>EXPERIENCE</h2>
-                    <span class="line"></span>
-                </div>
-                <div class="expcontent">
-                    <div class="expplace">
-                        <button class="expactive" data-exp="orange">Orange</button>
-                        <button data-exp="unicef">Unicef</button>
+            <section id="exp" class="reveal">
+                <div class="expcard">
+                    <div class="exptitle">
+                        <span class="line"></span>
+                        <h2>EXPERIENCE</h2>
+                        <span class="line"></span>
                     </div>
-                    <div class="expdescription">
-                        <h3 class="jobdate"></h3>
-                        <h4 class="jobtitle"></h4>
-                        <div class="jobdescr"></div>
+                    <div class="expcontent">
+                        <div class="expplace">
+                            <button class="expactive" data-exp="orange">Orange</button>
+                            <button data-exp="unicef">Unicef</button>
+                        </div>
+                        <div class="expdescription">
+                            <h3 class="jobdate"></h3>
+                            <h4 class="jobtitle"></h4>
+                            <div class="jobdescr"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="edu" class="reveal">
-            <div class="educard">
-                <div class="edutitle">
-                    <span class="line"></span>
-                    <h2>DIPLOME</h2>
-                    <span class="line"></span>
+            <section id="edu" class="reveal">
+                <div class="educard">
+                    <div class="edutitle">
+                        <span class="line"></span>
+                        <h2>DIPLOME</h2>
+                        <span class="line"></span>
+                    </div>
+                    <div class="educontent">
+                        <div class="edudate">
+                            <button data-edu="2020">2020</button>
+                            <button data-edu="2023">2023</button>
+                            <button data-edu="2024">2024</button>
+                            <button class="eduactive" data-edu="2026">2026</button>
+                        </div>
+                        <div class="edudescr">
+                            <div class="datedescr">
+                                <h3 class="edtitle"></h3>
+                                <h4 class="edplace"></h4>
+                                <div class="eddescription"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="educontent">
-                    <div class="edudate">
-                        <button data-edu="2020">2020</button>
-                        <button data-edu="2023">2023</button>
-                        <button data-edu="2024">2024</button>
-                        <button class="eduactive" data-edu="2026">2026</button>
+            </section>
+            
+            <section id="project">
+                <div class="projectcard">
+                    <div class="projecttitle">
+                        <span class="line"></span>
+                        <h2>MES PROJETS</h2>
+                        <span class="line"></span>
                     </div>
-                    <div class="edudescr">
-                        <div class="datedescr">
-                            <h3 class="edtitle"></h3>
-                            <h4 class="edplace"></h4>
-                            <div class="eddescription"></div>
+                    <div class="projectcontent">
+                        <div class="item" data-pro="project1">
+                            <div class="projectpic">
+                                <img src="asset/Jupiter.jpg" alt="Jupiter Logo">
+                            </div>
+                            <div>
+                                <h1>Configuration de JUPITER</h1>
+                                <p>Descrition du projet. <br> Voir plus...</p>
+                            </div>
+                        </div>
+                        <div class="item" data-pro="project2">
+                            <div class="projectpic">
+                                <img src="asset/winServLogo.jpg" alt="Windows Server Logo">
+                            </div>
+                            <div>
+                                <h1>Administration de WINDOWS SERVER</h1>
+                                <p>Descrition du projet. <br> Voir plus...</p>
+                            </div>
+                        </div>
+                        <div class="item" data-pro="project3">
+                            <div class="projectpic">
+                                <img src="asset/proxmox1.jpg" alt="PROXMOX Logo">
+                            </div>
+                            <div>
+                                <h1>Administration de PROXMOX</h1>
+                                <p>Descrition du projet. <br> Voir plus...</p>
+                            </div>
+                        </div>
+                        <div class="item" data-pro="project4">
+                            
+                        </div>
+                        <div class="item" data-pro="project5">
+                            <div class="projectpic">
+                                <img src="asset/gestionStock.jpg" alt="Windows Server Logo">
+                            </div>
+                            <div>
+                                <h1>GESTION DE STOCK</h1>
+                                <p>Descrition du projet. <br> Voir plus...</p>
+                            </div>
+                        </div>
+                        <div class="item" data-pro="project6">
+                            <div class="projectpic">
+                                <img src="asset/assurance.jpg" alt="Windows Server Logo">
+                            </div>
+                            <div>
+                                <h1>GESTION D'ASSURANCE LOGICIEL</h1>
+                                <p>Descrition du projet. <br> Voir plus...</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <section id="project">
-            <div class="projectcard">
-                <div class="projecttitle">
-                    <span class="line"></span>
-                    <h2>MES PROJETS</h2>
-                    <span class="line"></span>
-                </div>
-                <div class="projectcontent">
-                    <div class="item" data-pro="project1">
-                        <div class="projectpic">
-                            <img src="asset/Jupiter.jpg" alt="Jupiter Logo">
-                        </div>
-                        <div>
-                            <h1>Configuration de JUPITER</h1>
-                            <p>Descrition du projet. <br> Voir plus...</p>
-                        </div>
+            </section>
+
+            <section id="skill">
+                <div class="skillcard">
+                    <div class="skilltitle">
+                        <span class="line"></span>
+                        <h2>COMPETENCES</h2>
+                        <span class="line"></span>
                     </div>
-                    <div class="item" data-pro="project2">
-                        <div class="projectpic">
-                            <img src="asset/winServLogo.jpg" alt="Windows Server Logo">
-                        </div>
+                    <div class="skillcontent">
+                        <h3>Compétences téchniques</h3>
                         <div>
-                            <h1>Administration de WINDOWS SERVER</h1>
-                            <p>Descrition du projet. <br> Voir plus...</p>
+                            <ul class="star">
+                                <li><strong><span>Réseaux:</span></strong> Cisco, Fortinet, VoIP(IPBX), VPN</li>
+                                <li><strong><span>Systèmes:</span></strong> Windows Server, Linux, Proxmox, VMware</li>
+                                <li><strong><span>Dev:</span></strong> PHP, SQL(Conception de BDD), JS, Python</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="item" data-pro="project3">
-                        <div class="projectpic">
-                            <img src="asset/proxmox1.jpg" alt="PROXMOX Logo">
-                        </div>
-                        <div>
-                            <h1>Administration de PROXMOX</h1>
-                            <p>Descrition du projet. <br> Voir plus...</p>
-                        </div>
-                    </div>
-                    <div class="item" data-pro="project4">
                         
-                    </div>
-                    <div class="item" data-pro="project5">
-                        <div class="projectpic">
-                            <img src="asset/gestionStock.jpg" alt="Windows Server Logo">
-                        </div>
+                        <h3>Autres compétences</h3>
                         <div>
-                            <h1>GESTION DE STOCK</h1>
-                            <p>Descrition du projet. <br> Voir plus...</p>
-                        </div>
-                    </div>
-                    <div class="item" data-pro="project6">
-                        <div class="projectpic">
-                            <img src="asset/assurance.jpg" alt="Windows Server Logo">
-                        </div>
-                        <div>
-                            <h1>GESTION D'ASSURANCE LOGICIEL</h1>
-                            <p>Descrition du projet. <br> Voir plus...</p>
+                            <ul class="star">
+                                <li>Rédaction de document technique</li>
+                                <li>Support et accompagnement des utilisateurs</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="skill">
-            <div class="skillcard">
-                <div class="skilltitle">
-                    <span class="line"></span>
-                    <h2>COMPETENCES</h2>
-                    <span class="line"></span>
-                </div>
-                <div class="skillcontent">
-                    <h3>Compétences téchniques</h3>
-                    <div>
-                        <ul class="star">
-                            <li><strong><span>Réseaux:</span></strong> Cisco, Fortinet, VoIP(IPBX), VPN</li>
-                            <li><strong><span>Systèmes:</span></strong> Windows Server, Linux, Proxmox, VMware</li>
-                            <li><strong><span>Dev:</span></strong> PHP, SQL(Conception de BDD), JS, Python</li>
-                        </ul>
+            <section id="technology" class="reveal">
+                <div class="techcard">
+                    <div class="techtitle">
+                        <span class="line"></span>
+                        <h2>VEILLES TECHNOLOGIQUES</h2>
+                        <span class="line"></span>
                     </div>
-                    
-                    <h3>Autres compétences</h3>
-                    <div>
-                        <ul class="star">
-                            <li>Rédaction de document technique</li>
-                            <li>Support et accompagnement des utilisateurs</li>
-                        </ul>
+                    <div class="techcontent">
+                        <div class="techitem">
+                            <div class="techimg">
+                                <img src="asset/Cybersercurite.jpg" alt="Cybersécurité logo">
+                            </div>
+                            <div class="techdescr">
+                                <h1>CYBERSECURITE</h1>
+                                <p>Afin d'assurer la résilience des systèmes face à des menaces en constante mutation. <br>
+                                Veilles sur les vulnerabilités, Analyse des menaces et les conformités avec l'ANSSI.</p>
+                            </div>
+                        </div>
+                        <div class="techitem">
+                            <div class="techimg">
+                                <img src="asset/cloud.jpg" alt="Cloud logo">
+                            </div>
+                            <div class="techdescr">
+                                <h1>CLOUD & AUTOMATISATION</h1>
+                                <p>Accompagnement de la transformation digitale par le déploiement d'infrastructures hybrides et scalables.<br>
+                                Services Microsoft Azure et gestion des configurations avec Ansible</p>
+                            </div>
+                        </div>
+                        <div class="techitem">
+                            <div class="techimg">
+                                <img src="asset/reseau.jpg" alt="Réseau cloud">
+                            </div>
+                            <div class="techdescr">
+                                <h1>RESEAUX & OBSERVABILITE</h1>
+                                <p>L'objectif est d'assurer la confidentialité des échanges et une supervision proactive de l'état des infrastructures. <br>
+                                VLANs et segmentation, les services d'infrastructure DHCP/DNS, WLAN et sécurité sans fil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer>
+                <p>&copy; 2026 - Miran RAKOTOARIMANANA. Tous droits réservés. <br> Conçu et développé par moi même.</p>
+            </footer>
+
+            <div class="popup">
+                <div class="projectPopup">
+                    <div class="popupTitle">
+                        <h1></h1>
+                        <p id="close">X</p>
+
+                    </div>
+                    <div class="popupDescription">
+                        <p></p>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <footer>
-            <p>&copy; 2026 - Miran RAKOTOARIMANANA. Tous droits réservés. <br> Conçu et développé par moi même.</p>
-        </footer>
-
-        <div class="popup">
-            <div class="projectPopup">
-                <div class="popupTitle">
-                    <h1></h1>
-                    <p id="close">X</p>
-
-                </div>
-                <div class="popupDescription">
-                    <p></p>
-                </div>
-            </div>
-        </div>
         </div>
     </body>
 </html>

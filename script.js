@@ -7,6 +7,8 @@ const revealAnimation = new IntersectionObserver(
         conditions.forEach(condition => {
             if (condition.isIntersecting) {
                 condition.target.classList.add("visible");
+            } else {
+                condition.target.classList.remove("visible")
             }
         })
     },
