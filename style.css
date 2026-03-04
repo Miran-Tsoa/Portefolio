@@ -287,7 +287,7 @@ header .name h1 {
 .educontent .edudate {
     display: flex;
     gap: 2em;
-    align-items: center; /* Centre les boutons et les traits verticalement */
+    align-items: center;
     position: relative;
 }
 
@@ -424,13 +424,21 @@ header .name h1 {
     bottom: 0;
     background-size: cover;
     background-position: center;
-    opacity: 0.05;
+    opacity: 0.4;
     z-index: 0;
     transition: transform 0.5s ease;
 }
 
+.CarouselItem .Item::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0) 100%);
+    z-index: 1;
+}
+
 .CarouselItem .Item:hover .ItemBackground {
-    opacity: 0.15;
+    opacity: 0.6;
 }
 
 .CarouselItem .Item .Itemcontent {
@@ -443,14 +451,20 @@ header .name h1 {
 
 .CarouselItem .Item .Itemcontent h1 {
     font-size: 2.5rem;
-    color: #F0C1CD;
+    color: #f17090;
     margin-bottom: 20px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
+.CarouselItem .Item .Itemcontent p {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9), 0px 2px 4px rgba(0, 0, 0, 1);
+    font-weight: 400;
+}
+
 .CarouselItem .Item .Itemcontent .techskill {
-    color: #f79ab1;
+    color: #F0C1CD;
     font-weight: bold;
     margin-top: 25px;
     letter-spacing: 2px;
@@ -835,8 +849,9 @@ footer p {
         width: 100%;
     }
 
-    .CarouselItem .Item .ItemBackground {
-        opacity: 0;
+    .carouselContent .Btncarousel {
+        display: none;
+        visibility: hidden;
     }
 }
 
