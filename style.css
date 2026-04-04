@@ -130,7 +130,11 @@ header .name h1 {
 
 #about .welcome #typewelcome {
     color: #F0C1CD;
-    font-size: 2.3em;
+    font-size: 2em;
+}
+
+#about .welcome h3 {
+    color: #f17090;
 }
 
 .welcome #blink {
@@ -460,15 +464,26 @@ header .name h1 {
 .CarouselItem .Item .Itemcontent p {
     color: #ffffff;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9), 0px 2px 4px rgba(0, 0, 0, 1);
-    font-weight: 400;
 }
 
 .CarouselItem .Item .Itemcontent .techskill {
-    color: #F0C1CD;
-    font-weight: bold;
+    color: #ECE6EA;
     margin-top: 25px;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
+}
+
+.Itemcontent .techskill button {
+    margin: 0.2em 0.2em;
+    background-color: #0E0C0E;
+    padding: 0.5em 1em;
+    border: 1px solid #ECE6EA;
+    border-radius: 1em;
+    font-weight: bold;
+    color: #F0C1CD;
+}
+
+.CarouselItem .Item:hover .Itemcontent .techskill button {
+    background-color: #F0C1CD;
+    color: #0E0C0E;
 }
 
 .Item .Itemcontent a {
@@ -564,6 +579,19 @@ header .name h1 {
     gap: 2em;
 }
 
+.skillcard .skillsupport {
+    display: flex;
+    justify-content: right;
+}
+
+.skillcard .skillsupport a {
+    color: #f17090;
+}
+
+.skillcard .skillsupport a:hover {
+    color: #f79ab1;
+}
+
 .skillcard .skillcontent div {
     opacity: 0;
     transform: translateY(60px);
@@ -583,7 +611,7 @@ header .name h1 {
     background-color: #f0c1cd17;
     transform: translateX(1em);
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    transition: transform 0.1s ease, background-color 0.1s ease;
 }
 
 .skillcard .skillcontent h3 {
@@ -595,7 +623,6 @@ header .name h1 {
     list-style: none;
     padding-left: 2em;
 }
-
 
 .skillcontent .star li {
     position: relative;
@@ -652,6 +679,11 @@ header .name h1 {
     width: 30%;
 }
 
+.techitem .techimg {
+    width: 100%;
+    height: 100%;
+}
+
 .techitem .techimg img {
     width: 100%;
     height: 100%;
@@ -675,6 +707,10 @@ header .name h1 {
     justify-content: center;
 }
 
+.techitem .techdescr h1 {
+    color: #F0C1CD;
+}
+
 .techitem .techdescr a {
     opacity: 0;
     visibility: hidden;
@@ -690,8 +726,8 @@ header .name h1 {
 .techitem .techdescr:hover {
     background: linear-gradient(
         to bottom, 
-        rgba(0, 0, 0, 0.2) 10%, 
-        rgba(0, 0, 0, 0.4) 100%
+        rgba(0, 0, 0, 0.3) 10%, 
+        rgba(0, 0, 0, 0.6) 100%
     )
 }
 

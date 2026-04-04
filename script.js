@@ -21,8 +21,8 @@ reveals.forEach(reveal => revealAnimation.observe(reveal));
 
 // JS for about section
 
-const welcomeText = "SOYEZ LA BIENVENUE,"
-const welcomeSpeed = 100;
+const welcomeText = "ENCHANTÉ, MOI C'EST MIRAN !"
+const welcomeSpeed = 50;
 let index = 0;
 
 const welcomeType = document.getElementById("typewelcome");
