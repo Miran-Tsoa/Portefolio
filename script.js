@@ -19,6 +19,26 @@ const revealAnimation = new IntersectionObserver(
 
 reveals.forEach(reveal => revealAnimation.observe(reveal));
 
+// JS for hamburger menu 
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.querySelector("header .menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    menu.classList.toggle("open");
+    document.body.style.overflow = menu.classList.contains("open") ? "hidden" : "";
+});
+
+// Close hamburger menu
+menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        menu.classList.remove("open");
+        document.body.style.overflow = "";
+    });
+});
+
 // JS for about section
 
 const welcomeText = "ENCHANTÉ, MOI C'EST MIRAN !"
@@ -28,8 +48,8 @@ let index = 0;
 const welcomeType = document.getElementById("typewelcome");
 
 function typeEffect() {
-    if (index<welcomeText.length) {
-        welcomeType.textContent+=welcomeText.charAt(index);
+    if (index < welcomeText.length) {
+        welcomeType.textContent += welcomeText.charAt(index);
         index++;
         setTimeout(typeEffect, welcomeSpeed);
     }
@@ -42,9 +62,9 @@ typeEffect();
 
 const experiences = {
     orange: {
-        date : "Septembre 2024 - Juillet 2026",
-        title : "Technicienne d'intégration - en alternance",
-        description : `
+        date: "Septembre 2024 - Juillet 2026",
+        title: "Technicienne d'intégration - en alternance",
+        description: `
             <p>Intervention sur le terrain pour mettre en place des solutions réseaux. Transformation des besoins techniques en une installation complète:</p>
             <ul>
                 <li>Paramètrage <span>complet des équipements réseaux</span>. (switchs, firewall, routeur) </li>
@@ -56,9 +76,9 @@ const experiences = {
             <p>Une expérience qui m'a permis de lier expertise terrain, développement d'outils sur mesure et gestion de la relation client.</p>
         `
     },
-    unicef : {
-        date : "Octobre 2024 - Novembre 2025",
-        title : "Jeune ambassadrice - bénévolat",
+    unicef: {
+        date: "Octobre 2024 - Novembre 2025",
+        title: "Jeune ambassadrice - bénévolat",
         description: `
             <p>Une expérience humaine et formatrice qui m'a permis de développer mes capacités de communicationet d'organisation au service d'une cause internationale au sein de UNICEF FRANCE:</p>
             <ul>
@@ -116,7 +136,7 @@ const expObserver = new IntersectionObserver((conditions) => {
     conditions.forEach(condition => {
         if (condition.isIntersecting) {
             // C'est ICI que l'animation se lance enfin quand l'élément apparaît !
-            animateList(); 
+            animateList();
             expObserver.unobserve(condition.target);
         }
     });
@@ -133,37 +153,37 @@ upExp("orange", false);
 //JS for edu section
 
 const educations = {
-    2020 : {
-        title : "DIPLOME DE BACCALAUREAT - Option Mathematiques et physiques",
-        place : "Lycée Gallieni d'Andoalo - Madagascar",
-        description : `
+    2020: {
+        title: "DIPLOME DE BACCALAUREAT - Option Mathematiques et physiques",
+        place: "Lycée Gallieni d'Andoalo - Madagascar",
+        description: `
             <p class="dipdescr">Apprentissage d'une <span>méthodologie de travail rigoureuse</span> à travers la résolution de problèmes complexes en mathématiques.</p>
             <p class="dipdescr">Développement d'<span>un esprit de synthèse et d'une capacité d'adaptation</span> face à des sujets techniques et théoriques variés.</p>
         `
     },
-    2023 : {
-        title : "CLASSE PREPARATOIRE AUX ECOLES INGENIEURS",
-        place : "Ecole Supérieur Polytechnique d'Antananarivo - Madagascar",
-        description : `
+    2023: {
+        title: "CLASSE PREPARATOIRE AUX ECOLES INGENIEURS",
+        place: "Ecole Supérieur Polytechnique d'Antananarivo - Madagascar",
+        description: `
             <p class="dipdescr">Capacité à <span>gérer une charge d'apprentissage importante</span> et à maintenir une productivité constante sous pression.</p>
             <p class="dipdescr">Développement d'une <span>aisance avec les concepts abstraits</span> à travers l'algèbre et les calculs vectoriels</p>
             <p class="dipdescr">Développement de la <span>logique informatique en développement</span> avec des algorithmes et Fortran</p>
         `
     },
-    2024 : {
-        title : "Première année en BTS GEMEAU - Gestion et Maîtrise de l'eau",
-        place : "Lycée Emile Boyer de la Giroday - La Réunion",
-        description : `
+    2024: {
+        title: "Première année en BTS GEMEAU - Gestion et Maîtrise de l'eau",
+        place: "Lycée Emile Boyer de la Giroday - La Réunion",
+        description: `
             <p class="dipdescr">Adaptation réussie à un nouvel environnement professionnel et académique suite à une <span>mobilité internationale</span> vers La Réunion.</p>
             <p class="dipdescr">Utilisation de l'<span>outil SIG (Système d'Information Géographique)</span> : gestion de bases de données spatiales et cartographie de réseaux d'infrastructure.</p>
             <p class="dipdescr">Investigation et identification des facteurs de dysfonctionnements majeurs (inondations / ruptures de flux).</p>
             <p class="dipdescr"><span>Conception de projets</span> en bureau d'étude (retenues colinéaires) incluant l'<span>analyse des risques</span>.</p>
         `
     },
-    2026 : {
-        title : "BTS SIO - Services Informatiques aux Organisation, option SISR Solution d'Infrastructure Systèmes et Réseaux",
-        place : "EDN - Ecole du Numérique - CCI île de La Réunion",
-        description : `
+    2026: {
+        title: "BTS SIO - Services Informatiques aux Organisation, option SISR Solution d'Infrastructure Systèmes et Réseaux",
+        place: "EDN - Ecole du Numérique - CCI île de La Réunion",
+        description: `
             <p class="dipdescr">Acquisition <span>des socles fondamentaux en conception d'infrastructures</span> (Modèle OSI/ et TCP/IP), la maîtrise de la virtualisation système et l'administration de domaine.</p>
             <p class="dipdescr"><span>Sécurisation des flux distants</span> et du management des services informatiques (VPN/IPSEC, Firewall).</p>
             <p class="dipdescr">Attestation <span>MOOC </span> de l'<span>ANSII</span></p>
@@ -179,7 +199,7 @@ const edDescription = document.querySelector(".eddescription");
 //event listener
 
 eduButtons.forEach(eduButton => {
-    eduButton.addEventListener("click", ()=> {
+    eduButton.addEventListener("click", () => {
         eduButtons.forEach(edubtn => edubtn.classList.remove("eduactive"));
         eduButton.classList.add("eduactive");
         let eduContent = eduButton.dataset.edu;
@@ -211,17 +231,17 @@ const indics = document.querySelectorAll('.indic');
 
 nextBtn.addEventListener('click', () => {
     const slideWidth = projectItem.clientWidth;
-    projectItem.scrollBy({ 
-        left: slideWidth, 
+    projectItem.scrollBy({
+        left: slideWidth,
         behavior: 'smooth'
     });
 });
 
 prevBtn.addEventListener('click', () => {
     const slideWidth = projectItem.clientWidth;
-    projectItem.scrollBy({ 
+    projectItem.scrollBy({
         left: -slideWidth,
-        behavior: 'smooth' 
+        behavior: 'smooth'
     });
 });
 

@@ -1,4 +1,4 @@
-*{
+* {
     color: #ECE6EA;
     font-family: 'Lato', sans-serif;
 }
@@ -21,19 +21,20 @@ html {
 
 /*common class*/
 
-p span, li span {
+p span,
+li span {
     color: #f79ab1;
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .line {
@@ -48,23 +49,33 @@ p span, li span {
 header {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     z-index: 100;
-    width: calc(100% - 10em);
-    max-width: 1400px;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 5em;
+    padding: 0.8em clamp(1.5em, 4vw, 5em);
     background-color: #0e0c0ea2;
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px)
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid #f0c1cd10;
+    transition: padding 0.3s ease;
+}
+
+header .name h1 {
+    font-size: clamp(0.75em, 1.2vw, 1em);
+    margin: 0;
+    padding: 0;
+    color: #F0C1CD;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
 }
 
 header .menu ul {
     display: flex;
-    gap: 1em;
+    gap: clamp(0.5em, 1.5vw, 1.5em);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -72,22 +83,79 @@ header .menu ul {
 
 header .menu a {
     text-decoration: none;
-    font-size: 1em;
+    font-size: clamp(0.8em, 1.1vw, 1em);
+    white-space: nowrap;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+header .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f17090, #f79ab1);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 header .menu a:hover {
     color: #f17090;
 }
 
+header .menu a:hover::after {
+    width: 100%;
+}
+
 header .menu a:active {
     color: #f17090;
 }
 
-header .name h1 {
-    font-size: 1em;
-    margin: 0;
-    padding: 0;
-    color: #F0C1CD;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 200;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+    background-color: #f0c1cd15;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #ECE6EA;
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background-color: #f17090;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background-color: #f17090;
 }
 
 /* about section */
@@ -107,18 +175,18 @@ header .name h1 {
 }
 
 #about .pic .picOfme {
-  width: 250px;
-  height: 350px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0 20% 0 20%;
-  transition: transform 0.4s ease;
-  animation: fadepic 3s ease;
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0 20% 0 20%;
+    transition: transform 0.4s ease;
+    animation: fadepic 3s ease;
 }
 
 #about .pic .picOfme:hover {
-  cursor: pointer;
-  transform: scale(1.05);
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 
@@ -154,7 +222,8 @@ header .name h1 {
     border: none;
 }
 
-#about .welcome .CV:hover, #about .welcome .CV:active {
+#about .welcome .CV:hover,
+#about .welcome .CV:active {
     background-color: #f17090;
     cursor: pointer;
 }
@@ -166,7 +235,8 @@ header .name h1 {
     transition: transform 0.2s ease;
 }
 
-#about span i:hover, #about span i:active {
+#about span i:hover,
+#about span i:active {
     color: #f17090;
     cursor: pointer;
     transform: scale(1.3);
@@ -181,172 +251,278 @@ header .name h1 {
 }
 
 #exp .expcard {
-    background-color: #12121bec;
-    padding: 0.5em 2em;
-    border-radius: 40px;
+    background: linear-gradient(135deg, #12121bec 0%, #1a1a2eec 100%);
+    padding: 2em 2.5em;
+    border-radius: 24px;
+    border: 1px solid #f0c1cd15;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(240, 193, 205, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: box-shadow 0.4s ease;
+}
+
+#exp .expcard:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(240, 193, 205, 0.08);
 }
 
 #exp .expcard .exptitle {
     display: flex;
     align-items: center;
     gap: 2em;
+    margin-bottom: 1.5em;
 }
 
-#exp .expcard .expcontent{
+#exp .expcard .exptitle h2 {
+    letter-spacing: 0.15em;
+    font-size: 1.3em;
+}
+
+#exp .expcard .expcontent {
     display: flex;
-    gap: 2em;
+    gap: 2.5em;
 }
 
 .expcard .expcontent .expplace {
     display: flex;
     flex-direction: column;
+    gap: 0.3em;
 }
 
 .expplace button {
-    width: 10em;
+    width: 11em;
     font-size: 1em;
-    padding: 1em 0;
-    background: none;
+    padding: 1em 1.2em;
+    background: transparent;
     border: none;
-    border-right: 1px solid #ece6ea23;
-    transition: background-color 0.2s ease, border-right 0.5s ease;
+    border-right: 2px solid #ece6ea15;
+    border-radius: 12px 0 0 12px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+}
+
+.expplace button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #f0c1cd10);
+    opacity: 0;
+    transition: opacity 0.35s ease;
 }
 
 .expplace button:hover {
     cursor: pointer;
-    background-color: #f0c1cd35;
+    background-color: #f0c1cd12;
+}
+
+.expplace button:hover::before {
+    opacity: 1;
 }
 
 .expplace button.expactive {
-    border-right: 2px solid #F0C1CD;
+    border-right: 3px solid #f17090;
+    background: linear-gradient(90deg, #f0c1cd10, #f0c1cd20);
+    color: #F0C1CD;
+    font-weight: 700;
+    box-shadow: inset -2px 0 12px rgba(241, 112, 144, 0.15);
+}
+
+.expdescription {
+    padding: 0.5em 0 0.5em 1em;
+    border-left: 1px solid #f0c1cd15;
 }
 
 .expdescription .jobdate {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #f0c1cdab;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 .expdescription .jobtitle {
-    font-size: 1.1em;
+    font-size: 1.15em;
     color: #f79ab1;
+    margin-top: 0.2em;
+    font-weight: 700;
+}
+
+.jobdescr p {
+    line-height: 1.7;
+    font-size: 0.95em;
 }
 
 .jobdescr ul {
     list-style: none;
-    padding-left: 2em;
+    padding-left: 1em;
 }
 
 .jobdescr ul li {
     position: relative;
-    padding-left: 1.5em;
+    padding-left: 1.8em;
+    margin-bottom: 0.6em;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
+    transform: translateX(-15px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1.6;
+    font-size: 0.95em;
 }
 
 .jobdescr ul li.active {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateX(0px);
 }
 
 .jobdescr ul li::before {
-    content: "▸";
+    content: "";
     position: absolute;
     left: 0;
-    color: #f17090;
+    top: 0.55em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f17090;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    box-shadow: 0 0 8px rgba(241, 112, 144, 0.5);
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
 .jobdescr ul li.active::before {
     opacity: 1;
 }
 
+.jobdescr ul li.active:hover::before {
+    box-shadow: 0 0 14px rgba(241, 112, 144, 0.8);
+}
+
 /* education section */
 
-#edu{
+#edu {
     scroll-margin-top: 6em;
     padding: 0em 5em;
-    margin: 2em 0 0 0;
+    margin: 3em 0 0 0;
 }
 
 #edu .educard {
     height: auto;
-    padding: 0.5em 2em;
+    padding: 1em 2em 2em;
 }
 
 #edu .educard .edutitle {
     display: flex;
     gap: 2em;
     align-items: center;
+    margin-bottom: 1em;
+}
+
+#edu .educard .edutitle h2 {
+    letter-spacing: 0.15em;
+    font-size: 1.3em;
 }
 
 #edu .educard .educontent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+    gap: 2.5em;
 }
 
 .educontent .edudate {
     display: flex;
-    gap: 2em;
+    gap: 0;
     align-items: center;
     position: relative;
+    background: #12121b98;
+    border-radius: 50px;
+    padding: 0.4em 0.6em;
+    border: 1px solid #f0c1cd15;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .edudate button {
     background: none;
     border: none;
-    padding: 0.5em 1em;
-    border-radius: 40%;
-    transition: background-color 0.5s ease;
-    position: relative; 
-    z-index: 2; 
+    padding: 0.7em 1.5em;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    font-size: 0.95em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
 }
 
 .edudate button:not(:last-child)::after {
     content: "";
     position: absolute;
-    top: 50%; 
-    left: 100%; 
-    width: 2em; 
-    height: 2px; 
-    background-color: #f0c1cd45; 
+    top: 50%;
+    right: -2px;
+    width: 4px;
+    height: 4px;
+    background-color: #f0c1cd40;
+    border-radius: 50%;
     transform: translateY(-50%);
     z-index: 1;
 }
 
 .edudate button:hover {
-    background-color: #f0c1cd35;
+    background-color: #f0c1cd18;
     cursor: pointer;
 }
 
 .edudate button.eduactive {
-    background-color: #F0C1CD;
-    border: #ECE6EA 1px solid;
+    background: linear-gradient(135deg, #f17090 0%, #f79ab1 100%);
+    border: none;
     color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(241, 112, 144, 0.35), 0 0 30px rgba(241, 112, 144, 0.12);
 }
 
 .edudescr .datedescr {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #12121bec 0%, #1a1a2eec 100%);
+    border: 1px solid #f0c1cd15;
+    border-radius: 20px;
+    padding: 2em 2.5em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.edudescr .datedescr:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
 }
 
 .datedescr h3 {
     font-size: 1.1em;
     text-align: center;
     color: #f79ab1;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
 .datedescr h4 {
     color: #f0c1cdab;
-    font-size: 0.9em;
+    font-size: 0.85em;
     text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.2em;
+    font-weight: 300;
 }
 
 .datedescr .eddescription {
-    border-left: 2px solid #F0C1CD;
-    padding-left: 20px;
+    border-left: 2px solid #f0c1cd40;
+    padding-left: 24px;
     margin-left: 10px;
     position: relative;
     text-align: left;
@@ -355,17 +531,32 @@ header .name h1 {
 .dipdescr {
     position: relative;
     margin-bottom: 1.5em;
+    line-height: 1.7;
+    font-size: 0.95em;
+    padding: 0.4em 0;
+    transition: transform 0.3s ease;
+}
+
+.dipdescr:hover {
+    transform: translateX(6px);
 }
 
 .dipdescr::before {
     content: "";
     position: absolute;
-    left: -27px;
-    top: 5px;
+    left: -31px;
+    top: 10px;
     width: 12px;
     height: 12px;
-    background-color: #ECE6EA;
+    background: linear-gradient(135deg, #f17090, #f79ab1);
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(241, 112, 144, 0.4), 0 0 20px rgba(241, 112, 144, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dipdescr:hover::before {
+    box-shadow: 0 0 14px rgba(241, 112, 144, 0.6), 0 0 28px rgba(241, 112, 144, 0.25);
+    transform: scale(1.2);
 }
 
 /* project section */
@@ -376,7 +567,7 @@ header .name h1 {
     margin: 2em 0 0 0;
 }
 
-#project .projectcard{
+#project .projectcard {
     height: auto;
     padding: 0.5em 2em;
 }
@@ -406,6 +597,7 @@ header .name h1 {
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
+
 .CarouselItem::-webkit-scrollbar {
     display: none;
 }
@@ -422,9 +614,9 @@ header .name h1 {
 
 .CarouselItem .Item .ItemBackground {
     position: absolute;
-    top: 0; 
-    left: 0; 
-    right: 0; 
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
     background-size: cover;
     background-position: center;
@@ -436,7 +628,10 @@ header .name h1 {
 .CarouselItem .Item::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0) 100%);
     z-index: 1;
 }
@@ -529,13 +724,18 @@ header .name h1 {
     align-items: center;
 }
 
-.carouselContent .Btncarousel:hover { 
-    background: #F0C1CD; 
+.carouselContent .Btncarousel:hover {
+    background: #F0C1CD;
     color: #12121b;
 }
 
-.carouselContent .Btncarousel.prev { left: 20px; }
-.carouselContent .Btncarousel.next { right: 20px; }
+.carouselContent .Btncarousel.prev {
+    left: 20px;
+}
+
+.carouselContent .Btncarousel.next {
+    right: 20px;
+}
 
 .carouselContent .carouselIndic {
     position: absolute;
@@ -568,38 +768,78 @@ header .name h1 {
 }
 
 #skill .skillcard {
-    padding: 0.5em 2em;
-    border-radius: 40px;
+    padding: 1em 2em 2em;
+    border-radius: 24px;
 }
-
 
 #skill .skillcard .skilltitle {
     display: flex;
     align-items: center;
     gap: 2em;
+    margin-bottom: 0.5em;
+}
+
+#skill .skillcard .skilltitle h2 {
+    letter-spacing: 0.15em;
+    font-size: 1.3em;
 }
 
 .skillcard .skillsupport {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
+    margin-bottom: 1.5em;
+}
+
+.skillcard .skillsupport p {
+    font-size: 0.9em;
+    background: #12121b98;
+    padding: 0.6em 1.4em;
+    border-radius: 50px;
+    border: 1px solid #f0c1cd15;
 }
 
 .skillcard .skillsupport a {
     color: #f17090;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .skillcard .skillsupport a:hover {
     color: #f79ab1;
 }
 
+.skillcard .skillcontent {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
 .skillcard .skillcontent div {
     opacity: 0;
-    transform: translateY(60px);
-    background-color: #12121b98;
-    padding: 0.5em;
-    border-radius: 2em;
-    border: 1px solid #f0c1cd1f;
-    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(40px);
+    background: linear-gradient(135deg, #12121bec 0%, #1a1a2eec 100%);
+    padding: 1.5em 2em;
+    border-radius: 16px;
+    border: 1px solid #f0c1cd15;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5em;
+}
+
+.skillcard .skillcontent div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #f17090, #f79ab1);
+    border-radius: 4px 0 0 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .skillcard .skillcontent div.active {
@@ -608,32 +848,69 @@ header .name h1 {
 }
 
 .skillcard .skillcontent div.active:hover {
-    background-color: #f0c1cd17;
-    transform: translateX(1em);
+    background: linear-gradient(135deg, #12121b 0%, #1e1e30 100%);
+    transform: translateX(8px);
     cursor: pointer;
-    transition: transform 0.1s ease, background-color 0.1s ease;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease;
+    border-color: #f0c1cd30;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(241, 112, 144, 0.05);
+}
+
+.skillcard .skillcontent div.active:hover::before {
+    opacity: 1;
 }
 
 .skillcard .skillcontent h3 {
-    font-size: 1.1em;
+    font-size: 1.05em;
     color: #F0C1CD;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+    margin-top: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.skillcard .skillcontent h3::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f17090, #f79ab1);
+    box-shadow: 0 0 8px rgba(241, 112, 144, 0.4);
 }
 
 .skillcontent .star {
     list-style: none;
-    padding-left: 2em;
+    padding-left: 1.5em;
 }
 
 .skillcontent .star li {
     position: relative;
-    padding-left: 1.5em;
+    padding-left: 1.8em;
+    margin-bottom: 0.5em;
+    line-height: 1.7;
+    font-size: 0.95em;
+    transition: transform 0.2s ease;
+}
+
+.skillcontent .star li:hover {
+    transform: translateX(4px);
 }
 
 .skillcontent .star li::before {
-    content: "▸";
+    content: "";
     position: absolute;
     left: 0;
-    color: #f17090;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f17090;
+    box-shadow: 0 0 6px rgba(241, 112, 144, 0.4);
 }
 
 /* Technology section */
@@ -696,11 +973,9 @@ header .name h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to bottom, 
-        rgba(0, 0, 0, 0.4) 10%, 
-        rgba(0, 0, 0, 0.9) 100%
-    );
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4) 10%,
+            rgba(0, 0, 0, 0.9) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -724,11 +999,9 @@ header .name h1 {
 }
 
 .techitem .techdescr:hover {
-    background: linear-gradient(
-        to bottom, 
-        rgba(0, 0, 0, 0.3) 10%, 
-        rgba(0, 0, 0, 0.6) 100%
-    )
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3) 10%,
+            rgba(0, 0, 0, 0.6) 100%)
 }
 
 .techitem .techdescr:hover a {
@@ -755,13 +1028,16 @@ footer p {
 }
 
 @keyframes blinkanim {
-    50% {background: none;}
+    50% {
+        background: none;
+    }
 }
 
 @keyframes fadepic {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 100%;
     }
@@ -771,10 +1047,8 @@ footer p {
 
 @media (max-width: 1024px) {
     header {
-        width: calc(100% - 2em);
-        padding: 1em;
-        gap: 2em;
-        font-size: 0.9em;
+        padding: 0.8em 1.5em;
+        gap: 1em;
     }
 
     #about {
@@ -810,7 +1084,7 @@ footer p {
     }
 
     #skill {
-        padding:  0 1em;
+        padding: 0 1em;
     }
 
     #skill .skillcard {
@@ -823,17 +1097,102 @@ footer p {
 
     #technology .techcard {
         padding: 0.5em 0;
-    }   
+    }
 }
 
 @media (max-width : 768px) {
-    header {
-        font-size: 1em;
+    .hamburger {
+        display: flex;
+    }
+
+    header .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        background: rgba(14, 12, 14, 0.96);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        display: flex;
         justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+        z-index: 150;
+    }
+
+    header .menu.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    header .menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    header .menu ul li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    header .menu.open ul li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    header .menu.open ul li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    header .menu.open ul li:nth-child(2) {
+        transition-delay: 0.15s;
+    }
+
+    header .menu.open ul li:nth-child(3) {
+        transition-delay: 0.2s;
+    }
+
+    header .menu.open ul li:nth-child(4) {
+        transition-delay: 0.25s;
+    }
+
+    header .menu.open ul li:nth-child(5) {
+        transition-delay: 0.3s;
+    }
+
+    header .menu.open ul li:nth-child(6) {
+        transition-delay: 0.35s;
+    }
+
+    header .menu a {
+        font-size: 1.5em;
+        display: block;
+        padding: 0.8em 2em;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    header .menu a::after {
+        bottom: 0.4em;
+        height: 2px;
+    }
+
+    header {
+        padding: 0.8em 1.2em;
+        border-radius: 0;
+        border-bottom: 1px solid #f0c1cd15;
     }
 
     header .name h1 {
-        display: none;
+        font-size: 0.95em;
     }
 
     body {
@@ -842,15 +1201,29 @@ footer p {
 
     #about {
         text-align: center;
+        margin-top: 3.5em;
     }
 
     #about .welcome .textwelcome {
         justify-content: center;
-        margin-top: 5em;
+        margin-top: 2em;
     }
 
     #about .pic {
         display: none;
+    }
+
+    #edu {
+        padding: 0 0.5em;
+    }
+
+    .edudescr .datedescr {
+        padding: 1.5em 1.2em;
+    }
+
+    .educontent .edudate {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     #exp {
@@ -861,7 +1234,7 @@ footer p {
         border-radius: 0;
     }
 
-    #exp .expcard .expcontent{
+    #exp .expcard .expcontent {
         flex-direction: column;
     }
 
@@ -873,12 +1246,19 @@ footer p {
     .expplace button {
         border-right: none;
         border-bottom: 1px solid #ece6ea23;
+        border-radius: 0;
         transition: border-bottom 0.5s ease;
     }
 
     .expplace button.expactive {
         border-right: none;
-        border-bottom: 2px solid #F0C1CD;
+        border-bottom: 2px solid #f17090;
+        box-shadow: none;
+    }
+
+    .expdescription {
+        border-left: none;
+        padding-left: 0;
     }
 
     .edudescr .datedescr {
@@ -893,15 +1273,15 @@ footer p {
 
 @media (max-width : 480px) {
 
-    header .menu {
-        display: none;
-    }
-
     header .name h1 {
-        display: flex;
+        font-size: 0.85em;
     }
 
     #about .welcome #typewelcome {
         font-size: 1.5em;
+    }
+
+    header .menu a {
+        font-size: 1.3em;
     }
 }
