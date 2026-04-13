@@ -166,8 +166,8 @@ const educations = {
         place: "Ecole Supérieur Polytechnique d'Antananarivo - Madagascar",
         description: `
             <p class="dipdescr">Capacité à <span>gérer une charge d'apprentissage importante</span> et à maintenir une productivité constante sous pression.</p>
-            <p class="dipdescr">Développement d'une <span>aisance avec les concepts abstraits</span> à travers l'algèbre et les calculs vectoriels</p>
-            <p class="dipdescr">Développement de la <span>logique informatique en développement</span> avec des algorithmes et Fortran</p>
+            <p class="dipdescr">Développement d'une <span>aisance avec les concepts abstraits</span> à travers l'algèbre et les calculs vectoriels.</p>
+            <p class="dipdescr">Développement de la <span>logique informatique en développement</span> avec des algorithmes et Fortran.</p>
         `
     },
     2024: {
@@ -184,9 +184,11 @@ const educations = {
         title: "BTS SIO - Services Informatiques aux Organisation, option SISR Solution d'Infrastructure Systèmes et Réseaux",
         place: "EDN - Ecole du Numérique - CCI île de La Réunion",
         description: `
-            <p class="dipdescr">Acquisition <span>des socles fondamentaux en conception d'infrastructures</span> (Modèle OSI/ et TCP/IP), la maîtrise de la virtualisation système et l'administration de domaine.</p>
-            <p class="dipdescr"><span>Sécurisation des flux distants</span> et du management des services informatiques (VPN/IPSEC, Firewall).</p>
-            <p class="dipdescr">Attestation <span>MOOC </span> de l'<span>ANSII</span></p>
+            <p class="dipdescr">Conception d'<span>architectures virtualisées</span>, <span>segmentation</span> réseau et <span>gestion centralisée</span> des environnements.</p>
+            <p class="dipdescr">Déploiement de <span>pares-feux</span> et configuration de <span>tunnels VPN.</span></p>
+            <p class="dipdescr">Obtention de l'<span>attestation MOOC SecNumacadémie</span> délivrée par l'ANSSI, validant l'acquisition des fondamentaux en sécurité des systèmes d'information.</p>
+            <p class="dipdescr">Élaboration de <span>schémas détaillés</span> et <span>rédaction de procédures</span> d'exploitation technique.</p>
+            <p class="dipdescr">Analyse de besoin et gestion de projet.</p>
         `
     }
 }
@@ -284,6 +286,6 @@ const skillObserver = new IntersectionObserver((conditions) => {
             skillObserver.unobserve(condition.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
 skillObserver.observe(skillSection);

@@ -34,7 +34,7 @@
 
             <section id="about">
                 <div class="pic">
-                    <img src="asset/profil.jpg" alt="picture of me" class="picOfme">
+                    <img src="asset/profil.webp" alt="picture of me" class="picOfme">
                 </div>
                 <div class="welcome">
                     <div class="textwelcome">
@@ -137,8 +137,19 @@
                                 </div>
                             </div>
 
+                            <div class="Item">
+                                <div class="ItemBackground" style="background-image: url('asset/bastion.webp');"></div>
+                                <div class="Itemcontent">
+                                    <h1>PROJET BASTION</h1>
+                                    <p>Suite au déploiement des deux applications sur le réseau interne, il fallait mettre en place une <span>solution</span> permettant <span>aux collaborateurs</span> d'y accéder depuis <span>l'exterieur</span>. <br> L'objectif est de déployer un <span>serveur de rebond sécurisé</span> agissant comme <span>un point d'entrée unique</span> à l'infrastructure interne.</p>
+                                    <div class="techskill"><button>Opnsense</button><button>NAT/PAT</button><button>Proxmox</button><button>Apache guacamole</button><button>Authelia</button><button>HAproxy</button><button>certificat</button></div>
+                                    <a href="#">Télécharger le support</a> 
+                                </div>
+                            </div>
+
                             <div class="carouselIndic">
                                 <span class="indic active"></span>
+                                <span class="indic"></span>
                                 <span class="indic"></span>
                                 <span class="indic"></span>
                             </div>
@@ -157,12 +168,40 @@
                     </div>
                     <div class="skillsupport"><p>Télécharger la grille de compétence du BTS SIO <a href="#">ici</a>.</p></div>
                     <div class="skillcontent">
-                        <h3>Compétences téchniques</h3>
+                        <h3>Infrastruture et réseau</h3>
                         <div>
                             <ul class="star">
-                                <li><strong><span>Réseaux:</span></strong> Cisco, Fortinet, VoIP(IPBX), VPN</li>
-                                <li><strong><span>Systèmes:</span></strong> Windows Server, Linux, Proxmox, VMware</li>
-                                <li><strong><span>Dev:</span></strong> PHP, SQL(Conception de BDD), JS, Python</li>
+                                <li><strong><span>Architecture et segmentation:</span></strong> création de VLAN, routage inter-VLAN, configuration de switch et routeur cisco. </li>
+                                <li><strong><span>Sécurité: </span></strong>configuration d'un pare-feu (Opnsense, fortigate), reverse-proxy(HAProxy), gestion de certificat et autorité de certification.</li>
+                                <li><strong><span>Accès à distance:</span></strong>VPN IPsec, Serveur de rebond, Apache guacamole.</li>
+                            </ul>
+                        </div>
+
+                        <h3>Systèmes et Virtualisation</h3>
+                        <div>
+                            <ul class="star">
+                                <li><strong><span>Virtualisation:</span></strong> Hyperviseurs Proxmox VE et VMWare.</li>
+                                <li><strong><span>Windows: </span></strong>Windows Server, windows 10 et 11.</li>
+                                <li><strong><span>Linux:</span></strong> Debian, AlmaLinux, Kali Linux.</li>
+                            </ul>
+                        </div>
+
+                        <h3>Services et outils</h3>
+                        <div>
+                            <ul class="star">
+                                <li><strong><span>Services de base:</span></strong> Active directory, DHCP et DNS.</li>
+                                <li><strong><span>Identité et accès: </span></strong>Authelia</li>
+                                <li><strong><span>Supervision et support: </span></strong>Centreon, GLPI</li>
+                                <li><strong><span>Gestion de sauvegarde: </span></strong>Bacula</li>
+                            </ul>
+                        </div>
+
+                        <h3>Dev et automatisation</h3>
+                        <div>
+                            <ul class="star">
+                                <li><strong><span>Développement web: </span>PHP, HTML/CSS, JS, SQL</strong></li>
+                                <li><strong><span>Versionning et déploiement: </span></strong>Git, gestion de domaine OVH</li>
+                                <li><strong><span>Automatisation: </span></strong>Scripting et planification de tâche avec CRON</li>
                             </ul>
                         </div>
                         

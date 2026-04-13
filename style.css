@@ -486,7 +486,6 @@ header .menu a:active {
 
 .edudescr .datedescr {
     width: 100%;
-    max-width: 700px;
     box-sizing: border-box;
     background: linear-gradient(135deg, #12121bec 0%, #1a1a2eec 100%);
     border: 1px solid #f0c1cd15;
@@ -647,6 +646,11 @@ header .menu a:active {
     transform: scale(1.08);
 }
 
+.CarouselItem .Item:hover .techskill button {
+    background-color: #F0C1CD;
+    color: #0E0C0E;
+}
+
 .CarouselItem .Item .Itemcontent {
     position: relative;
     z-index: 2;
@@ -717,7 +721,6 @@ header .menu a:active {
 .Itemcontent .techskill button:hover {
     background: rgba(241, 112, 144, 0.2);
     border-color: rgba(241, 112, 144, 0.5);
-    box-shadow: 0 0 16px rgba(241, 112, 144, 0.2);
     transform: translateY(-2px);
     color: #ffffff;
 }
