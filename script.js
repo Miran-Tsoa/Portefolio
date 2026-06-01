@@ -186,7 +186,6 @@ const educations = {
         description: `
             <p class="dipdescr">Conception d'<span>architectures virtualisées</span>, <span>segmentation</span> réseau et <span>gestion centralisée</span> des environnements.</p>
             <p class="dipdescr">Déploiement de <span>pares-feux</span> et configuration de <span>tunnels VPN.</span></p>
-            <p class="dipdescr">Obtention de l'<span>attestation MOOC SecNumacadémie</span> délivrée par l'ANSSI, validant l'acquisition des fondamentaux en sécurité des systèmes d'information.</p>
             <p class="dipdescr">Élaboration de <span>schémas détaillés</span> et <span>rédaction de procédures</span> d'exploitation technique.</p>
             <p class="dipdescr">Analyse de besoin et gestion de projet.</p>
         `
@@ -222,44 +221,25 @@ function upEdu(eduContent) {
 upEdu("2026")
 
 
-//JS for project animation
+//JS for project section 
+// Folder cards E5
 
-const projectItem = document.getElementById('projectItem');
-const prevBtn = document.querySelector('.Btncarousel.prev');
-const nextBtn = document.querySelector('.Btncarousel.next');
-const indics = document.querySelectorAll('.indic');
+const folderCards = document.querySelectorAll('.folder-card');
 
-//Event listener
-
-nextBtn.addEventListener('click', () => {
-    const slideWidth = projectItem.clientWidth;
-    projectItem.scrollBy({
-        left: slideWidth,
-        behavior: 'smooth'
-    });
-});
-
-prevBtn.addEventListener('click', () => {
-    const slideWidth = projectItem.clientWidth;
-    projectItem.scrollBy({
-        left: -slideWidth,
-        behavior: 'smooth'
-    });
-});
-
-projectItem.addEventListener('scroll', () => {
-    const scrollPosition = projectItem.scrollLeft;
-    const slideWidth = projectItem.clientWidth;
-    const currentIndex = Math.round(scrollPosition / slideWidth);
-
-    indics.forEach((indic, index) => {
-        if (index === currentIndex) {
-            indic.classList.add('active');
-        } else {
-            indic.classList.remove('active');
+const folderObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            const card = entry.target;
+            const index = Array.from(folderCards).indexOf(card);
+            setTimeout(() => {
+                card.classList.add('folder-visible');
+            }, index * 150);
+            folderObserver.unobserve(card);
         }
     });
-});
+}, { threshold: 0.15 });
+
+folderCards.forEach(card => folderObserver.observe(card));
 
 // JS for skill section
 
