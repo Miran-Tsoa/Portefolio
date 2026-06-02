@@ -773,68 +773,6 @@ header .menu a:active {
     left: 0;
 }
 
-.carouselContent .Btncarousel {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: 1px solid rgba(240, 193, 205, 0.3);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carouselContent .Btncarousel:hover {
-    background: #F0C1CD;
-    color: #12121b;
-}
-
-.carouselContent .Btncarousel.prev {
-    left: 20px;
-}
-
-.carouselContent .Btncarousel.next {
-    right: 20px;
-}
-
-.carouselContent .carouselIndic {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 10;
-}
-
-.carouselIndic .indic {
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(240, 193, 205, 0.15);
-    border-radius: 50%;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-}
-
-.carouselIndic .indic:hover {
-    background: rgba(240, 193, 205, 0.3);
-}
-
-.carouselIndic .indic.active {
-    background: linear-gradient(135deg, #f17090, #f79ab1);
-    border-color: #f17090;
-    box-shadow: 0 0 12px rgba(241, 112, 144, 0.5), 0 0 24px rgba(241, 112, 144, 0.2);
-    transform: scale(1.25);
-}
 
 
 .project-subsection {
@@ -1334,10 +1272,293 @@ header .menu a:active {
     transition: all 0.4s ease;
 }
 
+
 .techitem:hover .techdescr a {
     background: #f17090;
     color: #ffffff;
     box-shadow: 0 4px 15px rgba(241, 112, 144, 0.3);
+}
+
+
+.veille-intro {
+    margin-bottom: 2.5em;
+}
+
+.veille-definition {
+    display: flex;
+    gap: 1.5em;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #12121bec 0%, #1a1a2eec 100%);
+    border: 1px solid #f0c1cd15;
+    border-radius: 20px;
+    padding: 2em 2.5em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2em;
+    position: relative;
+    overflow: hidden;
+}
+
+.veille-definition::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #f17090, #f79ab1);
+    border-radius: 4px 0 0 4px;
+}
+
+.veille-def-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f17090 0%, #f79ab1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(241, 112, 144, 0.35);
+}
+
+.veille-def-icon i {
+    font-size: 1.3em;
+    color: #ffffff;
+}
+
+.veille-def-text h3 {
+    font-size: 1.1em;
+    color: #F0C1CD;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.8em 0;
+    font-weight: 700;
+}
+
+.veille-def-text p {
+    font-size: 0.92em;
+    line-height: 1.8;
+    color: #ece6eacc;
+    margin: 0;
+}
+
+.veille-def-text p strong {
+    color: #f79ab1;
+    font-weight: 700;
+}
+
+.veille-types {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+}
+
+.veille-type-card {
+    background: linear-gradient(145deg, #12121bec 0%, #1a1a2eec 100%);
+    border: 1px solid #f0c1cd12;
+    border-radius: 20px;
+    padding: 2em 2em 1.5em;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.veille-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 20px 20px 0 0;
+    transition: height 0.4s ease;
+}
+
+.veille-active::before {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.veille-proactive::before {
+    background: linear-gradient(90deg, #f17090 0%, #f79ab1 100%);
+}
+
+.veille-type-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.4), 0 0 20px rgba(241, 112, 144, 0.08);
+    border-color: #f0c1cd30;
+}
+
+.veille-type-card:hover::before {
+    height: 4px;
+}
+
+.veille-type-header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.2em;
+}
+
+.veille-type-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.veille-active .veille-type-icon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 4px 14px rgba(79, 172, 254, 0.35);
+}
+
+.veille-active .veille-type-icon i {
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.veille-proactive .veille-type-icon {
+    background: linear-gradient(135deg, #f17090 0%, #f79ab1 100%);
+    box-shadow: 0 4px 14px rgba(241, 112, 144, 0.35);
+}
+
+.veille-proactive .veille-type-icon i {
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.veille-type-header h4 {
+    font-size: 1.05em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 0;
+}
+
+.veille-active .veille-type-header h4 {
+    color: #4facfe;
+}
+
+.veille-proactive .veille-type-header h4 {
+    color: #f79ab1;
+}
+
+.veille-type-card p {
+    font-size: 0.88em;
+    line-height: 1.75;
+    color: #ece6eaaa;
+    margin: 0 0 1.2em 0;
+}
+
+.veille-type-card p strong {
+    color: #ECE6EA;
+    font-weight: 700;
+}
+
+.veille-type-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.veille-type-card ul li {
+    position: relative;
+    padding-left: 1.6em;
+    margin-bottom: 0.5em;
+    font-size: 0.85em;
+    color: #ece6eacc;
+    line-height: 1.6;
+    transition: transform 0.2s ease;
+}
+
+.veille-type-card ul li:hover {
+    transform: translateX(4px);
+}
+
+.veille-type-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.veille-active ul li::before {
+    background: #4facfe;
+    box-shadow: 0 0 6px rgba(79, 172, 254, 0.5);
+}
+
+.veille-proactive ul li::before {
+    background: #f17090;
+    box-shadow: 0 0 6px rgba(241, 112, 144, 0.5);
+}
+
+.veille-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 2.5em 0 1.8em;
+    padding-left: 0.5em;
+}
+
+.veille-subtitle h3 {
+    font-size: 1.15em;
+    color: #F0C1CD;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.veille-outils-line {
+    text-align: center;
+    margin: 2em 0 0.5em;
+}
+
+.veille-outils-line p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2em;
+    flex-wrap: wrap;
+    font-size: 0.92em;
+    color: #ece6eacc;
+    margin: 0;
+}
+
+.veille-outils-line strong {
+    color: #F0C1CD;
+    letter-spacing: 0.05em;
+}
+
+.veille-outil {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    padding: 0.45em 1em;
+    background: rgba(240, 193, 205, 0.06);
+    border: 1px solid rgba(240, 193, 205, 0.15);
+    border-radius: 50px;
+    font-size: 0.9em;
+    color: #ece6eacc;
+    transition: all 0.3s ease;
+}
+
+.veille-outil:hover {
+    background: rgba(241, 112, 144, 0.12);
+    border-color: rgba(241, 112, 144, 0.35);
+    color: #f0c1cd;
+    transform: translateY(-2px);
+}
+
+.veille-outil i {
+    color: #f79ab1;
+    font-size: 0.85em;
 }
 
 /*footer*/
@@ -1432,6 +1653,10 @@ footer p {
 
     #technology .techcard {
         padding: 0.5em 0;
+    }
+
+    .veille-definition {
+        padding: 1.5em 1.8em;
     }
 }
 
@@ -1600,10 +1825,6 @@ footer p {
         width: 100%;
     }
 
-    .carouselContent .Btncarousel {
-        display: none;
-        visibility: hidden;
-    }
 
     .folder-grid {
         grid-template-columns: 1fr;
@@ -1619,6 +1840,21 @@ footer p {
 
     .techcard .techcontent {
         grid-template-columns: 1fr;
+    }
+
+    .veille-types {
+        grid-template-columns: 1fr;
+    }
+
+    .veille-definition {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5em 1.2em;
+    }
+
+    .veille-subtitle {
+        padding-left: 0;
     }
 }
 
