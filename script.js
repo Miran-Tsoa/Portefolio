@@ -270,3 +270,53 @@ const skillObserver = new IntersectionObserver((conditions) => {
 }, { threshold: 0.3 });
 
 skillObserver.observe(skillSection);
+
+
+// JS for E5 Modals
+
+const modalButtons = document.querySelectorAll('[data-modal]');
+const modalOverlays = document.querySelectorAll('.modal-overlay');
+
+// Open modal
+modalButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const modalId = btn.dataset.modal;
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('modal-active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close modal via close button
+document.querySelectorAll('.modal-close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+        closeBtn.closest('.modal-overlay').classList.remove('modal-active');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close modal via overlay click
+modalOverlays.forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('modal-active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// Close modal via Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        modalOverlays.forEach(overlay => {
+            if (overlay.classList.contains('modal-active')) {
+                overlay.classList.remove('modal-active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});

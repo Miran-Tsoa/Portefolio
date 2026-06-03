@@ -22,7 +22,13 @@
                     <li><a href="#about">Moi</a></li>
                     <li><a href="#exp">Expérience</a></li>
                     <li><a href="#edu">Diplôme</a></li>
-                    <li><a href="#project">Projets</a></li>
+                    <li class="dropdown">
+                        <a href="#project">Projets</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#projectE6">Projet E6</a></li>
+                            <li><a href="#projectE5">Projet E5</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#skill">Compétences</a></li>
                     <li><a href="#technology">Veilles</a></li>
                 </ul>
@@ -155,23 +161,6 @@
                     </div>
                     <div class="folder-grid">
 
-                        <div class="folder-card" id="folder-stock">
-                            <div class="folder-img">
-                                <img src="asset/stock.webp" alt="Stock'UI project">
-                            </div>
-                            <div class="folder-body">
-                                <h4>STOCK'UI</h4>
-                                <p>Application web MVC pour gérer le flux d'entrée et sortie du stock à chaque
-                                    production.</p>
-                                <div class="folder-tags">
-                                    <span>PHP</span><span>JS</span><span>MySQL</span><span>BDD</span>
-                                </div>
-                                <a href="https://drive.google.com/file/d/15yeN8Q7ISEIAGeQNX2Cx7wibLUvvx8si/view?usp=drive_link"
-                                    target="_blank" rel="noopener noreferrer" class="folder-link"><i
-                                        class="fa-solid fa-download"></i> Support</a>
-                            </div>
-                        </div>
-
                         <div class="folder-card" id="folder-assur">
                             <div class="folder-img">
                                 <img src="asset/assurange.webp" alt="ASSUR'UI project">
@@ -180,11 +169,26 @@
                                 <h4>ASSUR'UI</h4>
                                 <p>Application web dédiée au suivi des licences avec alerte automatisée par mail.</p>
                                 <div class="folder-tags">
-                                    <span>PHPMailer</span><span>Zimbra</span><span>DNS</span>
+                                    <span>LAMP</span><span>OVH</span><span>DNS</span>
                                 </div>
-                                <a href="https://drive.google.com/file/d/1Q842etGARa1OpWCfrlbUAEkfjd1WuVjH/view?usp=drive_link"
-                                    target="_blank" rel="noopener noreferrer" class="folder-link"><i
-                                        class="fa-solid fa-download"></i> Support</a>
+                                <button class="folder-link" data-modal="modal-assur"><i class="fa-solid fa-eye"></i>
+                                    Voir détails</button>
+                            </div>
+                        </div>
+
+                        <div class="folder-card" id="folder-stock">
+                            <div class="folder-img">
+                                <img src="asset/stock.webp" alt="Stock'UI project">
+                            </div>
+                            <div class="folder-body">
+                                <h4>STOCK'UI</h4>
+                                <p>Application web pour la gestion du flux d'entrée et sortie du stock à chaque
+                                    production.</p>
+                                <div class="folder-tags">
+                                    <span>PHP</span><span>JS</span><span>MySQL</span><span>Apache2</span>
+                                </div>
+                                <button class="folder-link" data-modal="modal-stock"><i class="fa-solid fa-eye"></i>
+                                    Voir détails</button>
                             </div>
                         </div>
 
@@ -199,9 +203,8 @@
                                 <div class="folder-tags">
                                     <span>Opnsense</span><span>Guacamole</span><span>Authelia</span><span>HAproxy</span>
                                 </div>
-                                <a href="https://drive.google.com/file/d/VOTRE_ID_BASTION/view?usp=sharing"
-                                    target="_blank" rel="noopener noreferrer" class="folder-link"><i
-                                        class="fa-solid fa-download"></i> Support</a>
+                                <button class="folder-link" data-modal="modal-bastion"><i class="fa-solid fa-eye"></i>
+                                    Voir détails</button>
                             </div>
                         </div>
 
@@ -306,7 +309,7 @@
                                 <span class="veille-type-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
                                 <h4>Veille Active</h4>
                             </div>
-                            <p>La veille active consiste à <strong>rechercher délibérément</strong> des informations sur
+                            <p>La veille active consiste à rechercher délibérément des informations sur
                                 un sujet précis. Je vais chercher l'information de manière ciblée en consultant
                                 régulièrement des sources identifiées.</p>
                             <ul>
@@ -318,10 +321,10 @@
                         <div class="veille-type-card veille-proactive">
                             <div class="veille-type-header">
                                 <span class="veille-type-icon"><i class="fa-solid fa-satellite-dish"></i></span>
-                                <h4>Veille Proactive</h4>
+                                <h4>Veille Passive</h4>
                             </div>
-                            <p>La veille proactive vise à <strong>anticiper les tendances</strong> avant qu'elles ne
-                                deviennent dominant sur le marché. Elle repose sur des outils automatisés et une
+                            <p>La veille Passive vise à anticiper les tendances avant qu'elles ne
+                                deviennent dominantes sur le marché. Elle repose sur des outils automatisés et une
                                 capacité à relier des signaux faibles pour prévoir les évolutions à venir.</p>
                             <ul>
                                 <li>Anticipation des tendances émergentes</li>
@@ -380,6 +383,166 @@
         <footer>
             <p>&copy; 2026 - Miran RAKOTOARIMANANA. Tous droits réservés. <br> Conçu et développé par moi même.</p>
         </footer>
+    </div>
+
+    <!-- Modals E5 -->
+    <div class="modal-overlay" id="modal-stock">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal-header">
+                <div class="modal-badge">E5</div>
+                <h2>STOCK'UI</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Contexte</h3>
+                        <p>STOCK'UI est une application web centralisée que j'ai conçue lors de mon alternance chez
+                            Orange. Je me suis heurtée à la difficulté d'une gestion manuelle du stock de l'équipe alors
+                            cette solution va permettre de maîtriser de bout en bout le flux des équipements avec une
+                            visibilité en temps réel à un instant t.</p>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Ce que j'ai réalisé</h3>
+                        <ul>
+                            <li>J'ai une infrastructure standardisée donc similaire à ASSUR'UI (environnement).</li>
+                            <li>Transfert et mise en production de la structure de l'application via le client WinSCP.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Compétences mobilisées</h3>
+                        <div class="modal-badges">
+                            <span class="modal-skill-badge">VMWare ESXi</span>
+                            <span class="modal-skill-badge">LAMP</span>
+                            <span class="modal-skill-badge">Debian</span>
+                            <span class="modal-skill-badge">JavaScript</span>
+                            <span class="modal-skill-badge">HTML / CSS</span>
+                            <span class="modal-skill-badge">WinSCP</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
+                    dossier technique complet</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-assur">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal-header">
+                <div class="modal-badge">E5</div>
+                <h2>ASSUR'UI</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Contexte</h3>
+                        <p>Dans le cadre de mon alternance chez Orange, j'ai pu développé et déployé une application que
+                            j'ai nommé "ASSUR'UI" qui permet de suivre en temps réel la validité des assurances
+                            logicielles fin d'éviter le blocage des interventions techniques et respecter les Garanties
+                            de Temps de Rétablissement (GTR).</p>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Réalisation en lien avec ma spécialité</h3>
+                        <ul>
+                            <li>Déploiement d'une machine virtuelle sous Debian 12 via l'hyperviseur VMWare ESXi.</li>
+                            <li>Mise en place d'un environnement LAMP (Linux - Apache - MySQL - PHP).</li>
+                            <li>Isolation du serveur par segmentation dans un VLAN dédié.</li>
+                            <li>Authentification restrictive via les fichiers .htaccess et .htpasswd.</li>
+                            <li>Configuration de Zimbra mail sur OVH pour l'envoi des mails automatiques.</li>
+                            <li>Planification de tache automatique sur CRON pour l'execution du script d'envoie de mail.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Compétences mobilisées</h3>
+                        <div class="modal-badges">
+                            <span class="modal-skill-badge">VMWare ESXi</span>
+                            <span class="modal-skill-badge">PHP</span>
+                            <span class="modal-skill-badge">Debian</span>
+                            <span class="modal-skill-badge">HTML/CSS</span>
+                            <span class="modal-skill-badge">Apache2</span>
+                            <span class="modal-skill-badge">MySQL</span>
+                            <span class="modal-skill-badge">DNS</span>
+                            <span class="modal-skill-badge">CRON</span>
+                            <span class="modal-skill-badge">VLAN</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
+                    dossier technique complet</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-bastion">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal-header">
+                <div class="modal-badge">E5</div>
+                <h2>PROJET BASTION</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Contexte</h3>
+                        <p>Suite au déploiement des deux applications, nous avons rencontré un problème : les
+                            techniciens et les chefs de projet sont, la plupart du temps, en déplacement ou en
+                            télétravail, alors que l'accès à ces applications est restreint au réseau interne de
+                            l'équipe. Le défi était donc de mettre en place un serveur de rebond sécurisé servant de
+                            point d'accès unique à l'infrastructure interne.</p>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Ce que j'ai réalisé</h3>
+                        <ul>
+                            <li>Gestion de domaine avec duckDNS.</li>
+                            <li>Configuration NAT/PAT sur la box internet de l'équipe.</li>
+                            <li>Configuration de OPNSense comme pare feu et reverse-proxy(HAProxy).</li>
+                            <li>Mise en place de Certbot (anciennement let's encrypt).</li>
+                            <li>Mise en place d'une autorité de certification et de certificat.</li>
+                            <li>Installation de Apache Guacamole comme serveur de rebond.</li>
+                            <li>Mise en place d'Authelia pour la double authentification.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Compétences mobilisées</h3>
+                        <div class="modal-badges">
+                            <span class="modal-skill-badge">Opnsense</span>
+                            <span class="modal-skill-badge">Apache Guacamole</span>
+                            <span class="modal-skill-badge">Authelia</span>
+                            <span class="modal-skill-badge">HAproxy</span>
+                            <span class="modal-skill-badge">NAT/PAT</span>
+                            <span class="modal-skill-badge">Certbot</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
+                    schéma réseau</a>
+            </div>
+        </div>
     </div>
 </body>
 
