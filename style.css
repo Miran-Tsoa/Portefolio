@@ -773,7 +773,18 @@ header .menu a:active {
     left: 0;
 }
 
+/* Download links E6 */
+.project-links {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.8em;
+}
 
+.project-links a {
+    margin-top: 0 !important;
+}
 
 .project-subsection {
     margin-bottom: 3em;

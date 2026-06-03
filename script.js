@@ -241,6 +241,7 @@ const folderObserver = new IntersectionObserver((entries) => {
 
 folderCards.forEach(card => folderObserver.observe(card));
 
+
 // JS for skill section
 
 const skillContent = document.querySelectorAll(".skillcontent div")
