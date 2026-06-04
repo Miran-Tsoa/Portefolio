@@ -39,6 +39,32 @@ menu.querySelectorAll("a").forEach(link => {
     });
 });
 
+// Theme Toggle
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector("i");
+const body = document.body;
+
+// Check for saved theme preference
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme === "light") {
+    body.classList.add("light-mode");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+}
+
+themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    if (body.classList.contains("light-mode")) {
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+        localStorage.setItem("theme", "light");
+    } else {
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+        localStorage.setItem("theme", "dark");
+    }
+});
+
 // JS for about section
 
 const welcomeText = "ENCHANTÉ, MOI C'EST MIRAN !"

@@ -2327,3 +2327,285 @@ footer p {
         font-size: 1.3em;
     }
 }
+
+/* --- THEME TOGGLE & LIGHT MODE --- */
+
+header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #F0C1CD;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    color: #f17090;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    header .header-right {
+        gap: 0.8em;
+    }
+}
+
+/* LIGHT MODE OVERRIDES */
+body.light-mode {
+    background-color: #fdfafb;
+}
+body.light-mode * {
+    color: #2c282a;
+}
+body.light-mode header {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid #f0c1cd50;
+}
+body.light-mode header .name h1 {
+    color: #e65a7d;
+}
+body.light-mode header .menu a {
+    color: #4a4548;
+}
+body.light-mode header .menu a:hover {
+    color: #e65a7d;
+}
+body.light-mode .dropdown-menu {
+    background: #ffffff;
+    border-top: 3px solid #f17090;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+body.light-mode .dropdown-menu a {
+    color: #4a4548;
+}
+body.light-mode .dropdown-menu a:hover {
+    color: #e65a7d;
+}
+body.light-mode .theme-toggle {
+    color: #4a4548;
+}
+body.light-mode .theme-toggle:hover {
+    color: #e65a7d;
+}
+body.light-mode .hamburger .bar {
+    background-color: #2c282a;
+}
+body.light-mode .hamburger.active .bar:nth-child(1),
+body.light-mode .hamburger.active .bar:nth-child(3) {
+    background-color: #f17090;
+}
+body.light-mode header .menu.open {
+    background: rgba(255, 255, 255, 0.96);
+}
+body.light-mode #about .welcome #typewelcome {
+    color: #e65a7d;
+}
+body.light-mode #about .welcome h3 {
+    color: #f17090;
+}
+body.light-mode .welcome #blink {
+    background-color: #e65a7d;
+}
+body.light-mode #about span i {
+    color: #e65a7d;
+}
+
+/* CARDS BACKGROUNDS */
+body.light-mode #exp .expcard,
+body.light-mode #edu .datedescr,
+body.light-mode #project .carouselContent,
+body.light-mode #skill .skillcard .skillcontent div,
+body.light-mode #technology .techcard,
+body.light-mode .veille-definition,
+body.light-mode .veille-type-card,
+body.light-mode .modal-container,
+body.light-mode .folder-card {
+    background: #ffffff;
+    border: 1px solid #f0c1cd60;
+    box-shadow: 0 8px 32px rgba(240, 193, 205, 0.15);
+}
+body.light-mode #exp .expcard:hover,
+body.light-mode #edu .datedescr:hover,
+body.light-mode .folder-card:hover {
+    box-shadow: 0 12px 40px rgba(240, 193, 205, 0.25);
+    background: #fffafa;
+}
+body.light-mode #skill .skillcard .skillcontent div.active:hover {
+    background: #fffafa;
+    border-color: #f0c1cd80;
+    box-shadow: 0 8px 30px rgba(240, 193, 205, 0.2), 0 0 20px rgba(241, 112, 144, 0.1);
+}
+
+/* FIXING TEXT CONTRASTS */
+body.light-mode .jobdate,
+body.light-mode .datedescr h4,
+body.light-mode .folder-body p,
+body.light-mode .veille-outils-line p,
+body.light-mode .veille-outil,
+body.light-mode .veille-type-card p,
+body.light-mode .veille-type-card ul li,
+body.light-mode .modal-section-content p,
+body.light-mode .modal-section-content ul li,
+body.light-mode .modal-tags span {
+    color: #4a4548;
+}
+
+body.light-mode .jobtitle,
+body.light-mode .skillcard .skillsupport a,
+body.light-mode .modal-header h2,
+body.light-mode .modal-section-content h3 {
+    color: #e65a7d;
+}
+
+body.light-mode .expplace button {
+    color: #4a4548;
+}
+body.light-mode .expplace button.expactive {
+    background: linear-gradient(90deg, #f0c1cd30, #f0c1cd60);
+    color: #e65a7d;
+}
+body.light-mode .expdescription .jobtitle {
+    color: #e65a7d;
+}
+body.light-mode p span,
+body.light-mode li span {
+    color: #e65a7d;
+}
+body.light-mode .jobdescr ul li::before,
+body.light-mode .skillcontent .star li::before,
+body.light-mode .modal-section-content ul li::before {
+    background: #f17090;
+}
+body.light-mode .edudate {
+    background: #ffffff;
+    border: 1px solid #f0c1cd60;
+}
+body.light-mode .edudate button {
+    color: #4a4548;
+}
+body.light-mode .edudate button.eduactive {
+    color: #ffffff;
+}
+body.light-mode .datedescr h3 {
+    color: #e65a7d;
+}
+
+/* CAROUSEL */
+body.light-mode .CarouselItem .Item::before {
+    background: transparent;
+}
+body.light-mode .CarouselItem .Item .Itemcontent h1 {
+    color: #e65a7d;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.9);
+}
+body.light-mode .CarouselItem .Item .Itemcontent p {
+    color: #4a4548;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    display: inline-block;
+}
+body.light-mode .Itemcontent .techskill button {
+    color: #e65a7d;
+    border-color: #f0c1cd80;
+    background: #fdfafb;
+}
+
+body.light-mode .Itemcontent .techskill button:hover {
+    color: #ffffff;
+    background: #f17090;
+}
+
+body.light-mode .Item .Itemcontent a {
+    background: rgba(255, 255, 255, 0.85);
+    color: #e65a7d;
+    border-color: #f0c1cd80;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .Item .Itemcontent a:hover {
+    background: #e65a7d !important;
+    color: #ffffff !important;
+    border-color: #e65a7d !important;
+}
+body.light-mode .Itemcontent .techskill button:hover {
+    color: #ffffff;
+    background: #f17090;
+}
+
+/* FOLDER CARDS (Projet E5) */
+body.light-mode .folder-body h4 {
+    color: #e65a7d;
+}
+body.light-mode .folder-tags span {
+    border-color: #f0c1cd80;
+    background: #ffffff;
+}
+body.light-mode .folder-link {
+    color: #e65a7d;
+    border-color: #f0c1cd80;
+}
+body.light-mode .folder-card:hover .folder-link {
+    color: #e65a7d;
+    border-color: #f0c1cd80;
+    background: transparent;
+}
+body.light-mode .folder-link:hover,
+body.light-mode .folder-card:hover .folder-link:hover {
+    background: #e65a7d !important;
+    color: #ffffff !important;
+    border-color: #e65a7d !important;
+}
+body.light-mode .folder-img::after {
+    background: linear-gradient(to bottom, transparent, #ffffff);
+}
+body.light-mode .folder-img img,
+body.light-mode .folder-card:hover .folder-img img {
+    opacity: 1; /* Keep image clear */
+}
+
+/* SKILLS */
+body.light-mode .skillcard .skillsupport p {
+    background: #ffffff;
+}
+body.light-mode .skillcard .skillcontent h3 {
+    color: #e65a7d;
+}
+
+/* VEILLES DEFINITION */
+body.light-mode .veille-def-text h3 {
+    color: #e65a7d;
+}
+body.light-mode .veille-type-card p strong {
+    color: #2c282a;
+}
+
+/* MODALS */
+body.light-mode .modal-skill-badge {
+    background: rgba(240, 193, 205, 0.2);
+    color: #e65a7d;
+    border-color: #f0c1cd80;
+}
+body.light-mode .modal-close {
+    color: #2c282a;
+}
+body.light-mode .modal-close:hover {
+    color: #e65a7d;
+}
+body.light-mode .modal-section {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: #f0c1cd60;
+}
+body.light-mode .modal-overlay {
+    background: rgba(255, 255, 255, 0.85);
+}

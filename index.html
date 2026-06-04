@@ -17,27 +17,32 @@
             <div class="name">
                 <h1>Miran RAKOTOARIMANANA</h1>
             </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#about">Moi</a></li>
-                    <li><a href="#exp">Expérience</a></li>
-                    <li><a href="#edu">Diplôme</a></li>
-                    <li class="dropdown">
-                        <a href="#project">Projets</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#projectE6">Projet E6</a></li>
-                            <li><a href="#projectE5">Projet E5</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#skill">Compétences</a></li>
-                    <li><a href="#technology">Veilles</a></li>
-                </ul>
+            <div class="header-right">
+                <div class="menu">
+                    <ul>
+                        <li><a href="#about">Moi</a></li>
+                        <li><a href="#exp">Expérience</a></li>
+                        <li><a href="#edu">Diplôme</a></li>
+                        <li class="dropdown">
+                            <a href="#project">Projets</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#projectE6">Projet E6</a></li>
+                                <li><a href="#projectE5">Projet E5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#skill">Compétences</a></li>
+                        <li><a href="#technology">Veilles</a></li>
+                    </ul>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
         </header>
 
         <section id="about">
@@ -138,13 +143,8 @@
                                         <button>Proxmox</button><button>Linux</button><button>Windows</button><button>Fortinet</button><button>GLPI</button><button>Centreon</button><button>Bacula</button><button>Suricata</button>
                                     </div>
                                     <div class="project-links">
-                                        <a href="https://drive.google.com/file/d/1Hupw2eniNd4TKT2S37YL_RYISq3gOt1A/view?usp=drive_link"
-                                            target="_blank" rel="noopener noreferrer">
-                                            <i class="fa-solid fa-file-pdf"></i> Projet 1
-                                        </a>
-                                        <a href="https://drive.google.com/file/d/1nxeu6tIw_4LVANsDpUiLw7ILW_lotBTW/view?usp=drive_link"
-                                            target="_blank" rel="noopener noreferrer">
-                                            <i class="fa-solid fa-file-pdf"></i> Projet 2
+                                        <a href="#" data-modal="modal-jupiter">
+                                            <i class="fa-solid fa-eye"></i> Voir détails
                                         </a>
                                     </div>
                                 </div>
@@ -418,7 +418,7 @@
                 <div class="modal-section">
                     <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
                     <div class="modal-section-content">
-                        <h3>Compétences mobilisées</h3>
+                        <h3>Technologies utilisées</h3>
                         <div class="modal-badges">
                             <span class="modal-skill-badge">VMWare ESXi</span>
                             <span class="modal-skill-badge">LAMP</span>
@@ -429,9 +429,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li>Gestion du patrimoine informatique.</li>
+                            <li>Mise à disposition d'un service informatique pour les utilisateurs.</li>
+                            <li>Travail en mode projet.</li>
+                        </ul>
+                    </div>
+                </div>
                 <a href="https://drive.google.com/file/d/1c7edYXBQg0caTfSN4UT-XTYfq69SPzgv/view?usp=drive_link"
                     target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
-                    dossier technique complet</a>
+                    document technique</a>
             </div>
         </div>
     </div>
@@ -475,7 +486,7 @@
                 <div class="modal-section">
                     <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
                     <div class="modal-section-content">
-                        <h3>Compétences mobilisées</h3>
+                        <h3>Technologies utilisées</h3>
                         <div class="modal-badges">
                             <span class="modal-skill-badge">VMWare ESXi</span>
                             <span class="modal-skill-badge">PHP</span>
@@ -489,9 +500,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li>Gestion du patrimoine informatique.</li>
+                            <li>Mise à disposition d'un service informatique pour les utilisateurs.</li>
+                        </ul>
+                    </div>
+                </div>
                 <a href="https://drive.google.com/file/d/1Nb8H0L4mBlIa6k0HspkBG7o1Yawq_bky/view?usp=drive_link"
                     target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
-                    dossier technique complet</a>
+                    document technique</a>
             </div>
         </div>
     </div>
@@ -533,7 +554,7 @@
                 <div class="modal-section">
                     <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
                     <div class="modal-section-content">
-                        <h3>Compétences mobilisées</h3>
+                        <h3>Technologies utilisées</h3>
                         <div class="modal-badges">
                             <span class="modal-skill-badge">Opnsense</span>
                             <span class="modal-skill-badge">Apache Guacamole</span>
@@ -544,8 +565,94 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li>Gestion du patrimoine informatique</li>
+                            <li>Mise à disposition d'un service informatique pour les utilisateurs.</li>
+                        </ul>
+                    </div>
+                </div>
                 <a href="#" target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
                     schéma réseau</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-jupiter">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal-header">
+                <div class="modal-badge">E6</div>
+                <h2>PROJET JUPITER</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Contexte</h3>
+                        <p>Dans le cadre du BTS SIO, nous avons simulé une entreprise (PME) pour pouvoir mettre en place
+                            une infrastructure et un service informatique.</p>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Réalisation en lien avec ma spécialité</h3>
+                        <ul>
+                            <li>Analyse de besoin d'une PME.</li>
+                            <li>Comparaison et analyse des différentes solutions.</li>
+                            <li>Montage des baies informatiques.</li>
+                            <li>Segmentation du réseau (VLAN).</li>
+                            <li>Sécurisation des flux avec un Firewall.</li>
+                            <li>Mise en place de proxmox avec un cluster de management</li>
+                            <li>Mise en place d'un AD et d'un serveur partage de fichiers.</li>
+                            <li>Mise en place d'un système de sauvegarde centralisé.</li>
+                            <li>Mise en place d'un système de supervision et d'un service de ticketing.</li>
+                            <li>Mise en place d'une sonde de détection d'intrusion.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Technologies utilisées</h3>
+                        <div class="modal-badges">
+                            <span class="modal-skill-badge">Proxmox</span>
+                            <span class="modal-skill-badge">Linux</span>
+                            <span class="modal-skill-badge">Windows</span>
+                            <span class="modal-skill-badge">Fortinet</span>
+                            <span class="modal-skill-badge">GLPI</span>
+                            <span class="modal-skill-badge">Centreon</span>
+                            <span class="modal-skill-badge">Bacula</span>
+                            <span class="modal-skill-badge">Suricata</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="modal-section-content">
+                        <h3>Compétences mobilisées</h3>
+                        <ul>
+                            <li>Gestion du patrimoine informatique.</li>
+                            <li>Réponse aux incidents et aux demandes d'assistances et d'évolution.</li>
+                            <li>Travail en mode projet.</li>
+                            <li>Mise à disposition d'un service informatique pour les utilisateurs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; margin-top: 1.5em; flex-wrap: wrap;">
+                    <a href="https://drive.google.com/file/d/1Hupw2eniNd4TKT2S37YL_RYISq3gOt1A/view?usp=drive_link"
+                        target="_blank" class="btn-drive"
+                        style="flex: 1; text-align: center; justify-content: center;"><i
+                            class="fa-solid fa-file-pdf"></i> Projet 1</a>
+                    <a href="https://drive.google.com/file/d/1nxeu6tIw_4LVANsDpUiLw7ILW_lotBTW/view?usp=drive_link"
+                        target="_blank" class="btn-drive"
+                        style="flex: 1; text-align: center; justify-content: center;"><i
+                            class="fa-solid fa-file-pdf"></i> Projet 2</a>
+                </div>
             </div>
         </div>
     </div>
