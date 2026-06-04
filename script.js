@@ -67,9 +67,9 @@ const experiences = {
         description: `
             <p>Intervention sur le terrain pour mettre en place des solutions réseaux. Transformation des besoins techniques en une installation complète:</p>
             <ul>
-                <li>Paramètrage <span>complet des équipements réseaux</span>. (switchs, firewall, routeur) </li>
-                <li>Mise en service de <span>solutions de téléphonies IP</span></li>
-                <li><span>Conception et déploiement d'une application web</span> (Stack PHP, JS, HTML/CSS) pour <span>automatiser</span> le suivi des stocks et des licences logiciels.</li>
+                <li>Paramétrage <span>complet des équipements réseaux</span>. (switchs, firewall, routeurs) </li>
+                <li>Mise en service de <span>solutions de téléphonie IP</span></li>
+                <li><span>Conception et déploiement d'une application web</span> (Stack PHP, JS, HTML/CSS) pour <span>automatiser</span> le suivi des stocks et des licences logicielles.</li>
                 <li>Accompagnement et échange avec les clients.</li>
                 <li>Rédaction de <span>comptes-rendus </span> pour assurer un suivi.</li>
             </ul>
@@ -80,7 +80,7 @@ const experiences = {
         date: "Octobre 2024 - Novembre 2025",
         title: "Jeune ambassadrice - bénévolat",
         description: `
-            <p>Une expérience humaine et formatrice qui m'a permis de développer mes capacités de communicationet d'organisation au service d'une cause internationale au sein de UNICEF FRANCE:</p>
+            <p>Une expérience humaine et formatrice qui m'a permis de développer mes capacités de communication et d'organisation au service d'une cause internationale au sein de l'UNICEF FRANCE:</p>
             <ul>
                 <li><span>Animation d'ateliers</span> et <span>présentation</span> des droits de l'enfant auprès de différents publics.</li>
                 <li><span>Promotion des actions</span> de l'UNICEF lors d'événements locaux.</li>
@@ -154,7 +154,7 @@ upExp("orange", false);
 
 const educations = {
     2020: {
-        title: "DIPLOME DE BACCALAUREAT - Option Mathematiques et physiques",
+        title: "DIPLÔME DE BACCALAURÉAT - Option Mathématiques et physiques",
         place: "Lycée Gallieni d'Andoalo - Madagascar",
         description: `
             <p class="dipdescr">Apprentissage d'une <span>méthodologie de travail rigoureuse</span> à travers la résolution de problèmes complexes en mathématiques.</p>
@@ -162,8 +162,8 @@ const educations = {
         `
     },
     2023: {
-        title: "CLASSE PREPARATOIRE AUX ECOLES INGENIEURS",
-        place: "Ecole Supérieur Polytechnique d'Antananarivo - Madagascar",
+        title: "CLASSE PRÉPARATOIRE AUX ÉCOLES D'INGÉNIEURS",
+        place: "École Supérieure Polytechnique d'Antananarivo - Madagascar",
         description: `
             <p class="dipdescr">Capacité à <span>gérer une charge d'apprentissage importante</span> et à maintenir une productivité constante sous pression.</p>
             <p class="dipdescr">Développement d'une <span>aisance avec les concepts abstraits</span> à travers l'algèbre et les calculs vectoriels.</p>
@@ -181,11 +181,11 @@ const educations = {
         `
     },
     2026: {
-        title: "BTS SIO - Services Informatiques aux Organisation, option SISR Solution d'Infrastructure Systèmes et Réseaux",
-        place: "EDN - Ecole du Numérique - CCI île de La Réunion",
+        title: "BTS SIO - Services Informatiques aux Organisations, option SISR Solutions d'Infrastructure Systèmes et Réseaux",
+        place: "EDN - École du Numérique - CCI île de La Réunion",
         description: `
             <p class="dipdescr">Conception d'<span>architectures virtualisées</span>, <span>segmentation</span> réseau et <span>gestion centralisée</span> des environnements.</p>
-            <p class="dipdescr">Déploiement de <span>pares-feux</span> et configuration de <span>tunnels VPN.</span></p>
+            <p class="dipdescr">Déploiement de <span>pare-feux</span> et configuration de <span>tunnels VPN.</span></p>
             <p class="dipdescr">Élaboration de <span>schémas détaillés</span> et <span>rédaction de procédures</span> d'exploitation technique.</p>
             <p class="dipdescr">Analyse de besoin et gestion de projet.</p>
         `
