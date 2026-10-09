@@ -3,395 +3,322 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>BTS SIO | Miran</title>
+    <title>Miran | Cybersécurité</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio de Miran RAKOTOARIMANANA, étudiante en Bachelor Cybersécurité à Epitech.">
+    <meta name="theme-color" content="#16161f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script>
+        try { if (localStorage.getItem("theme") === "light") document.documentElement.classList.add("light-mode"); } catch (e) { }
+    </script>
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <div class="wrap">
-        <header>
-            <div class="name">
-                <h1>Miran RAKOTOARIMANANA</h1>
-            </div>
-            <div class="header-right">
-                <div class="menu">
-                    <ul>
-                        <li><a href="#about">Moi</a></li>
-                        <li><a href="#exp">Expérience</a></li>
-                        <li><a href="#edu">Diplôme</a></li>
-                        <li class="dropdown">
-                            <a href="#project">Projets</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#projectE6">Projet E6</a></li>
-                                <li><a href="#projectE5">Projet E5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#skill">Compétences</a></li>
-                        <li><a href="#technology">Veilles</a></li>
-                    </ul>
-                </div>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
-                    <i class="fa-solid fa-sun"></i>
-                </button>
-                <button class="hamburger" id="hamburger" aria-label="Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
-        </header>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
-        <section id="about">
-            <div class="pic">
-                <img src="asset/profil.webp" alt="picture of me" class="picOfme">
-            </div>
-            <div class="welcome">
-                <div class="textwelcome">
-                    <h1 id="typewelcome"></h1>
-                    <span id="blink"></span>
-                </div>
-                <h3>ÉTUDIANTE EN SYSTÈMES ET RÉSEAUX.</h3>
-                <p> À l'heure d'aujourd'hui, la frontière numérique n'a plus de limites. <br> Comprendre le
-                    fonctionnement de ce monde, c'est assurer sa pérennité et sa sécurité. <br>En dehors de ce cercle
+    <header>
+        <a href="#about" class="logo" aria-label="Retour en haut">
+            <span class="logo-mark">M</span>
+            <span class="logo-name">Miran RAKOTOARIMANANA</span>
+        </a>
+        <div class="header-right">
+            <nav class="menu" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="#about">Moi</a></li>
+                    <li><a href="#exp">Expérience</a></li>
+                    <li><a href="#edu">Diplôme</a></li>
+                    <li class="dropdown">
+                        <a href="#project">Projets <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#projectSchool"><span><i class="fa-solid fa-graduation-cap"></i></span> Projet d'école</a></li>
+                            <li><a href="#projectWork"><span><i class="fa-solid fa-briefcase"></i></span> Projets d'alternance</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#skill">Compétences</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="hero-text">
+                <p class="hero-prompt"><span class="prompt-user">root@miran</span>:<span class="prompt-path">~</span># whoami</p>
+                <h1 class="hero-title">
+                    <span class="hero-hello" id="typewelcome" aria-label="Enchanté, moi c'est Miran !"></span><span id="blink" aria-hidden="true"></span>
+                </h1>
+                <h2 class="hero-role">Étudiante en <em>cybersécurité</em>.</h2>
+                <p class="hero-intro">À l'heure d'aujourd'hui, la frontière numérique n'a plus de limites. Comprendre le
+                    fonctionnement de ce monde, c'est assurer sa pérennité et sa sécurité. En dehors de ce cercle
                     technique, je suis également passionnée par l'univers de <span>la musique</span> et de <span>la
                         cinématographie</span>.</p>
-                <a href="asset/CV.pdf" target="_blank" download="CV.pdf" class="CV"> <b> Télécharger mon CV </b></a>
-                <p>Ou contactez-moi sur: <span><a href="mailto:rakotoarimananamirantsoa2@gmail.com"><i
-                                class="fa-solid fa-envelope"></i></a><a
-                            href="https://www.linkedin.com/in/miran-tsoa-rakotoarimanana-9b8a36318" target="_blank"
-                            rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a><a
-                            href="https://github.com/Miran-Tsoa" target="_blank" rel="noopener noreferrer"><i
-                                class="fa-brands fa-github"></i></a></span></p>
-            </div>
-        </section>
-
-        <section id="exp" class="reveal">
-            <div class="expcard">
-                <div class="exptitle">
-                    <span class="line"></span>
-                    <h2>EXPERIENCE</h2>
-                    <span class="line"></span>
-                </div>
-                <div class="expcontent">
-                    <div class="expplace">
-                        <button class="expactive" data-exp="orange">Orange</button>
-                        <button data-exp="unicef">Unicef</button>
-                    </div>
-                    <div class="expdescription">
-                        <h3 class="jobdate"></h3>
-                        <h4 class="jobtitle"></h4>
-                        <div class="jobdescr"></div>
+                <div class="hero-actions">
+                    <a href="asset/CV.pdf" target="_blank" download="CV.pdf" class="btn btn-primary magnetic">
+                        <i class="fa-solid fa-arrow-down"></i> Télécharger mon CV
+                    </a>
+                    <div class="hero-socials">
+                        <span>Ou contactez-moi :</span>
+                        <a href="mailto:rakotoarimananamirantsoa2@gmail.com" aria-label="Email" class="social magnetic"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/miran-tsoa-rakotoarimanana-9b8a36318" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social magnetic"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Miran-Tsoa" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social magnetic"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section id="edu" class="reveal">
-            <div class="educard">
-                <div class="edutitle">
-                    <span class="line"></span>
-                    <h2>DIPLÔME</h2>
-                    <span class="line"></span>
-                </div>
-                <div class="educontent">
-                    <div class="edudate">
-                        <button data-edu="2020">2020</button>
-                        <button data-edu="2023">2023</button>
-                        <button data-edu="2024">2024</button>
-                        <button class="eduactive" data-edu="2026">2026</button>
+            <div class="hero-visual">
+                <div class="portrait">
+                    <svg class="portrait-ring" viewBox="0 0 200 200" aria-hidden="true">
+                        <defs>
+                            <path id="ring-path" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0" />
+                        </defs>
+                        <text><textPath href="#ring-path">CYBERSÉCURITÉ · EPITECH · SYSTÈMES · RÉSEAUX · </textPath></text>
+                    </svg>
+                    <div class="portrait-frame">
+                        <img src="asset/profil.webp" alt="Photo de Miran" class="picOfme">
                     </div>
-                    <div class="edudescr">
-                        <div class="datedescr">
-                            <h3 class="edtitle"></h3>
-                            <h4 class="edplace"></h4>
-                            <div class="eddescription"></div>
-                        </div>
+                    <div class="portrait-badge badge-status">
+                        <span class="pulse"></span> Bachelor 3 à <b>Epitech</b>
+                    </div>
+                    <div class="portrait-badge badge-loc">
+                        <i class="fa-solid fa-location-dot"></i> La Réunion
                     </div>
                 </div>
             </div>
+
+            <a href="#exp" class="scroll-hint" aria-label="Défiler vers l'expérience">
+                <span class="mouse"><span></span></span>
+            </a>
         </section>
 
-        <section id="project">
-            <div class="projectcard">
-                <div class="projecttitle">
-                    <span class="line"></span>
-                    <h2>MES PROJETS</h2>
-                    <span class="line"></span>
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span>Langage C</span><span>Proxmox</span><span>Fortinet</span><span>OPNsense</span><span>VLAN</span><span>Active Directory</span><span>Suricata</span><span>HAProxy</span><span>Centreon</span><span>GLPI</span><span>Bacula</span><span>Debian</span><span>Authelia</span><span>VPN IPsec</span><span>Guacamole</span>
+                <span>Langage C</span><span>Proxmox</span><span>Fortinet</span><span>OPNsense</span><span>VLAN</span><span>Active Directory</span><span>Suricata</span><span>HAProxy</span><span>Centreon</span><span>GLPI</span><span>Bacula</span><span>Debian</span><span>Authelia</span><span>VPN IPsec</span><span>Guacamole</span>
+            </div>
+        </div>
+
+        <section id="exp" class="section">
+            <div class="section-head reveal">
+                <span class="section-index">01</span>
+                <h2>Expérience</h2>
+                <p class="section-kicker">Le terrain, les clients et l'engagement.</p>
+            </div>
+            <div class="exp-layout reveal">
+                <div class="expplace" role="tablist" aria-label="Expériences">
+                    <button class="expactive" data-exp="orangeSolution" role="tab">
+                        <span class="exp-logo">O</span>
+                        <span class="exp-name">Orange<small>Spécialiste solution</small></span>
+                    </button>
+                    <button data-exp="orange" role="tab">
+                        <span class="exp-logo">O</span>
+                        <span class="exp-name">Orange<small>Technicienne d'intégration</small></span>
+                    </button>
+                    <button data-exp="unicef" role="tab">
+                        <span class="exp-logo">U</span>
+                        <span class="exp-name">Unicef<small>Bénévolat</small></span>
+                    </button>
+                    <span class="tab-indicator" aria-hidden="true"></span>
                 </div>
-
-                <div class="project-subsection" id="projectE6">
-                    <div class="subsection-header">
-                        <span class="subsection-badge">E6</span>
-                        <h3>Projet E6</h3>
-                        <span class="subsection-line"></span>
-                    </div>
-                    <div class="carouselContent">
-                        <div class="CarouselItem" id="projectItem">
-                            <div class="Item">
-                                <div class="ItemBackground" style="background-image: url('asset/Jupiter.webp');"></div>
-                                <div class="Itemcontent">
-                                    <h1>PROJET JUPITER</h1>
-                                    <p>Déploiement de A à Z d'une infrastructure informatique pour une PME. <br> Le
-                                        projet comprend la segmentation du réseau et le renforcement de la sécurité via
-                                        un Firewall. <br> Ainsi que la mise en place d'une gestion unifiée, d'une
-                                        politique de sauvegarde et d'une supervision proactive.</p>
-                                    <div class="techskill">
-                                        <button>Proxmox</button><button>Linux</button><button>Windows</button><button>Fortinet</button><button>GLPI</button><button>Centreon</button><button>Bacula</button><button>Suricata</button>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="#" data-modal="modal-jupiter">
-                                            <i class="fa-solid fa-eye"></i> Voir détails
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-subsection" id="projectE5">
-                    <div class="subsection-header">
-                        <span class="subsection-badge">E5</span>
-                        <h3>Projet E5</h3>
-                        <span class="subsection-line"></span>
-                    </div>
-                    <div class="folder-grid">
-
-                        <div class="folder-card" id="folder-assur">
-                            <div class="folder-img">
-                                <img src="asset/assurange.webp" alt="ASSUR'UI project">
-                            </div>
-                            <div class="folder-body">
-                                <h4>ASSUR'UI</h4>
-                                <p>Application web dédiée au suivi des licences avec alerte automatisée par mail.</p>
-                                <div class="folder-tags">
-                                    <span>LAMP</span><span>OVH</span><span>DNS</span>
-                                </div>
-                                <button class="folder-link" data-modal="modal-assur"><i class="fa-solid fa-eye"></i>
-                                    Voir détails</button>
-                            </div>
-                        </div>
-
-                        <div class="folder-card" id="folder-stock">
-                            <div class="folder-img">
-                                <img src="asset/stock.webp" alt="Stock'UI project">
-                            </div>
-                            <div class="folder-body">
-                                <h4>STOCK'UI</h4>
-                                <p>Application web pour la gestion du flux d'entrée et sortie du stock à chaque
-                                    production.</p>
-                                <div class="folder-tags">
-                                    <span>PHP</span><span>JS</span><span>MySQL</span><span>Apache2</span>
-                                </div>
-                                <button class="folder-link" data-modal="modal-stock"><i class="fa-solid fa-eye"></i>
-                                    Voir détails</button>
-                            </div>
-                        </div>
-
-                        <div class="folder-card" id="folder-bastion">
-                            <div class="folder-img">
-                                <img src="asset/bastion.webp" alt="Projet Bastion">
-                            </div>
-                            <div class="folder-body">
-                                <h4>PROJET BASTION</h4>
-                                <p>Serveur de rebond sécurisé comme point d'entrée unique à l'infrastructure interne.
-                                </p>
-                                <div class="folder-tags">
-                                    <span>Opnsense</span><span>Guacamole</span><span>Authelia</span><span>HAproxy</span>
-                                </div>
-                                <button class="folder-link" data-modal="modal-bastion"><i class="fa-solid fa-eye"></i>
-                                    Voir détails</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+                <article class="expdescription card" role="tabpanel">
+                    <p class="jobdate"></p>
+                    <h3 class="jobtitle"></h3>
+                    <div class="jobdescr"></div>
+                </article>
             </div>
         </section>
 
-        <section id="skill">
-            <div class="skillcard">
-                <div class="skilltitle">
-                    <span class="line"></span>
-                    <h2>COMPÉTENCES</h2>
-                    <span class="line"></span>
+        <section id="edu" class="section">
+            <div class="section-head reveal">
+                <span class="section-index">02</span>
+                <h2>Diplôme</h2>
+                <p class="section-kicker">De Madagascar à La Réunion, un parcours en cinq étapes.</p>
+            </div>
+            <div class="edu-layout reveal">
+                <div class="edudate" role="tablist" aria-label="Parcours">
+                    <span class="timeline-track" aria-hidden="true"><span class="timeline-fill"></span></span>
+                    <button data-edu="2020" role="tab"><span class="dot"></span><span class="year">2020</span></button>
+                    <button data-edu="2023" role="tab"><span class="dot"></span><span class="year">2023</span></button>
+                    <button data-edu="2024" role="tab"><span class="dot"></span><span class="year">2024</span></button>
+                    <button data-edu="2026" role="tab"><span class="dot"></span><span class="year">2026</span></button>
+                    <button class="eduactive" data-edu="2027" role="tab"><span class="dot"></span><span class="year">2027</span></button>
                 </div>
-                <div class="skillsupport">
-                    <p>Télécharger la grille de compétences du BTS SIO <a
-                            href="https://docs.google.com/spreadsheets/d/1Wsl7NraC6jyoIFiL9yB98uumJrpOBTgD/edit?usp=drive_link&ouid=115799113387967093232&rtpof=true&sd=true"
-                            target="_blank" rel="noopener noreferrer">ici</a>.</p>
-                </div>
-                <div class="skillcontent">
-                    <h3>Infrastructure et réseau</h3>
-                    <div>
-                        <ul class="star">
-                            <li><strong><span>Architecture et segmentation:</span></strong> création de VLAN, routage
-                                inter-VLAN, configuration de switch et routeur cisco. </li>
-                            <li><strong><span>Sécurité: </span></strong>Opnsense, Fortinet, Suricata (NIDS),
-                                Reverse-Proxy (HAproxy, Nginx), certificat et autorité de certification.
-                            </li>
-                            <li><strong><span>Accès à distance:</span></strong>VPN IPsec, Serveur de rebond, Apache
-                                guacamole.</li>
-                        </ul>
-                    </div>
-
-                    <h3>Systèmes et Virtualisation</h3>
-                    <div>
-                        <ul class="star">
-                            <li><strong><span>Virtualisation:</span></strong> Hyperviseurs Proxmox VE et VMWare.</li>
-                            <li><strong><span>Windows: </span></strong>Windows Server, windows 10 et 11.</li>
-                            <li><strong><span>Linux:</span></strong> Debian, AlmaLinux, Kali Linux.</li>
-                        </ul>
-                    </div>
-
-                    <h3>Services et outils</h3>
-                    <div>
-                        <ul class="star">
-                            <li><strong><span>Services de base:</span></strong> Active directory, DHCP et DNS.</li>
-                            <li><strong><span>Identité et accès: </span></strong>Authelia</li>
-                            <li><strong><span>Supervision et support: </span></strong>Centreon, GLPI</li>
-                            <li><strong><span>Gestion de sauvegarde: </span></strong>Bacula</li>
-                        </ul>
-                    </div>
-
-                    <h3>Dev et automatisation</h3>
-                    <div>
-                        <ul class="star">
-                            <li><strong><span>Développement web: </span></strong>PHP, HTML/CSS, JS, SQL</li>
-                            <li><strong><span>Versionning et déploiement: </span></strong>Git, gestion de domaine OVH
-                            </li>
-                            <li><strong><span>Automatisation: </span></strong>Planification de tâches avec
-                                CRON</li>
-                        </ul>
-                    </div>
-
-                    <h3>Autres compétences</h3>
-                    <div>
-                        <ul class="star">
-                            <li>Rédaction de documents techniques</li>
-                            <li>Support et accompagnement des utilisateurs</li>
-                        </ul>
-                    </div>
-                </div>
+                <article class="datedescr card" role="tabpanel">
+                    <span class="edu-bigyear" aria-hidden="true"></span>
+                    <h3 class="edtitle"></h3>
+                    <p class="edplace"></p>
+                    <div class="eddescription"></div>
+                </article>
             </div>
         </section>
 
-        <section id="technology" class="reveal">
-            <div class="techcard">
-                <div class="techtitle">
-                    <span class="line"></span>
-                    <h2>VEILLES TECHNOLOGIQUES</h2>
-                    <span class="line"></span>
-                </div>
+        <section id="project" class="section">
+            <div class="section-head reveal">
+                <span class="section-index">03</span>
+                <h2>Mes projets</h2>
+                <p class="section-kicker">Des infrastructures pensées, montées et sécurisées de A à Z.</p>
+            </div>
 
-                <div class="veille-intro">
-                    <div class="veille-definition">
-                        <div class="veille-def-icon">
-                            <i class="fa-solid fa-binoculars"></i>
-                        </div>
-                        <div class="veille-def-text">
-                            <h3>Qu'est-ce qu'une veille technologique ?</h3>
-                            <p>La <strong>veille technologique</strong> est une méthodologie qui consiste à collecter,
-                                traiter et analyser l'information de manière régulière dans le but de me tenir informée
-                                des nouvelles technologies qui arrivent et d'anticiper leurs impacts sur la sécurité,
-                                l'infrastructure et la stratégie de l'entreprise.</p>
-                        </div>
-                    </div>
-
-                    <div class="veille-types">
-                        <div class="veille-type-card veille-active">
-                            <div class="veille-type-header">
-                                <span class="veille-type-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <h4>Veille Active</h4>
-                            </div>
-                            <p>La veille active consiste à rechercher délibérément des informations sur
-                                un sujet précis. Je vais chercher l'information de manière ciblée en consultant
-                                régulièrement des sources identifiées.</p>
-                            <ul>
-                                <li>Démarche volontaire et ciblée</li>
-                                <li>Recherche manuelle sur des sources précises</li>
-                                <li>Réponse à un besoin identifié</li>
-                            </ul>
-                        </div>
-                        <div class="veille-type-card veille-proactive">
-                            <div class="veille-type-header">
-                                <span class="veille-type-icon"><i class="fa-solid fa-satellite-dish"></i></span>
-                                <h4>Veille Passive</h4>
-                            </div>
-                            <p>La veille Passive vise à anticiper les tendances avant qu'elles ne
-                                deviennent dominantes sur le marché. Elle repose sur des outils automatisés et une
-                                capacité à relier des signaux faibles pour prévoir les évolutions à venir.</p>
-                            <ul>
-                                <li>Anticipation des tendances émergentes</li>
-                                <li>Automatisation via des outils dédiés</li>
-                                <li>Détection de signaux faibles</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="veille-outils-line">
-                    <p><strong>Mes outils :</strong>
-                        <span class="veille-outil"><i class="fa-solid fa-gem"></i> Pearltrees</span>
-                        <span class="veille-outil"><i class="fa-solid fa-rss"></i> Feedly</span>
-                        <span class="veille-outil"><i class="fa-solid fa-envelope"></i> Newsletters</span>
-                    </p>
-                </div>
-
-                <div class="veille-subtitle">
-                    <span class="subsection-badge"><i class="fa-solid fa-eye"></i></span>
-                    <h3>Mes veilles</h3>
+            <div class="project-subsection" id="projectSchool">
+                <div class="subsection-header reveal">
+                    <span class="subsection-badge"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <h3>Projet d'école</h3>
                     <span class="subsection-line"></span>
                 </div>
 
-                <div class="techcontent">
-                    <div class="techitem">
-                        <div class="techimg">
-                            <img src="asset/Cybersercurite.jpg" alt="Cybersécurité logo">
-                        </div>
-                        <div class="techdescr">
-                            <h1>CYBERSÉCURITÉ</h1>
-                            <p>Afin d'assurer la résilience des systèmes face à des menaces en constante mutation. <br>
-                                Veilles sur les vulnérabilités connues, Analyse des menaces et des conformités avec
-                                l'ANSSI.</p>
-                            <a href="https://www.pearltrees.com/miranetsoa/veille-cybersecurite/id102630967"
-                                target="_blank" rel="noopener noreferrer">Sources</a>
-                        </div>
+                <article class="featured spotlight reveal">
+                    <div class="featured-media">
+                        <img src="asset/Jupiter.webp" alt="Projet Jupiter">
                     </div>
-                    <div class="techitem">
-                        <div class="techimg">
-                            <img src="asset/agentIA.webp" alt="IA logo">
-                        </div>
-                        <div class="techdescr">
-                            <h1>OPENCLAW</h1>
-                            <p>Avec l'émergence des agents IA, on ne peut plus dissocier l'intelligence artificielle de
-                                la cybersécurité. S'informer sur leur fonctionnement, c'est comprendre la cybersécurité
-                                de demain.</p>
-                            <a href="https://www.pearltrees.com/miranetsoa/openclaw/id103453902" target="_blank"
-                                rel="noopener noreferrer">Sources</a>
-                        </div>
+                    <div class="featured-body">
+                        <p class="featured-eyebrow"><i class="fa-solid fa-server"></i> Infrastructure PME</p>
+                        <h4>Projet Jupiter</h4>
+                        <p>Déploiement de A à Z d'une infrastructure informatique pour une PME. Le
+                            projet comprend la segmentation du réseau et le renforcement de la sécurité via
+                            un Firewall. Ainsi que la mise en place d'une gestion unifiée, d'une
+                            politique de sauvegarde et d'une supervision proactive.</p>
+                        <ul class="tags">
+                            <li>Proxmox</li><li>Linux</li><li>Windows</li><li>Fortinet</li><li>GLPI</li><li>Centreon</li><li>Bacula</li><li>Suricata</li>
+                        </ul>
+                        <button class="btn btn-ghost" data-modal="modal-jupiter">
+                            Voir détails <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
+                </article>
+            </div>
+
+            <div class="project-subsection" id="projectWork">
+                <div class="subsection-header reveal">
+                    <span class="subsection-badge"><i class="fa-solid fa-briefcase"></i></span>
+                    <h3>Projets d'alternance</h3>
+                    <span class="subsection-line"></span>
+                </div>
+                <div class="folder-grid">
+
+                    <article class="folder-card spotlight" id="folder-stock">
+                        <div class="folder-img">
+                            <img src="asset/stock.webp" alt="Stock'UI project" loading="lazy">
+                        </div>
+                        <div class="folder-body">
+                            <span class="folder-num">01</span>
+                            <h4>STOCK'UI</h4>
+                            <p>Application web pour la gestion du flux d'entrée et sortie du stock à chaque
+                                production.</p>
+                            <ul class="tags">
+                                <li>PHP</li><li>JS</li><li>MySQL</li><li>Apache2</li>
+                            </ul>
+                            <button class="folder-link" data-modal="modal-stock">Voir détails <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+
+                    <article class="folder-card spotlight" id="folder-bastion">
+                        <div class="folder-img">
+                            <img src="asset/bastion.webp" alt="Projet Bastion" loading="lazy">
+                        </div>
+                        <div class="folder-body">
+                            <span class="folder-num">02</span>
+                            <h4>PROJET BASTION</h4>
+                            <p>Serveur de rebond sécurisé comme point d'entrée unique à l'infrastructure interne.</p>
+                            <ul class="tags">
+                                <li>Opnsense</li><li>Guacamole</li><li>Authelia</li><li>HAproxy</li>
+                            </ul>
+                            <button class="folder-link" data-modal="modal-bastion">Voir détails <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2026 - Miran RAKOTOARIMANANA. Tous droits réservés. <br> Conçu et développé par moi-même.</p>
-        </footer>
-    </div>
+        <section id="skill" class="section">
+            <div class="section-head reveal">
+                <span class="section-index">04</span>
+                <h2>Compétences</h2>
+                <p class="section-kicker">Du réseau au code, ce que je sais mettre en place.</p>
+            </div>
 
-    <!-- Modals E5 -->
-    <div class="modal-overlay" id="modal-stock">
+            <div class="bento">
+                <article class="skill-card spotlight bento-wide reveal">
+                    <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Infrastructure et réseau</h3>
+                    <dl>
+                        <div><dt>Architecture et segmentation</dt><dd>Création de VLAN, routage inter-VLAN, configuration de switch et routeur Cisco.</dd></div>
+                        <div><dt>Sécurité</dt><dd>Opnsense, Fortinet, Suricata (NIDS), Reverse-Proxy (HAproxy, Nginx), certificat et autorité de certification.</dd></div>
+                        <div><dt>Accès à distance</dt><dd>VPN IPsec, Serveur de rebond, Apache Guacamole.</dd></div>
+                    </dl>
+                </article>
+
+                <article class="skill-card spotlight reveal">
+                    <div class="skill-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Systèmes et Virtualisation</h3>
+                    <dl>
+                        <div><dt>Virtualisation</dt><dd>Hyperviseurs Proxmox VE et VMWare.</dd></div>
+                        <div><dt>Windows</dt><dd>Windows Server, Windows 10 et 11.</dd></div>
+                        <div><dt>Linux</dt><dd>Debian, AlmaLinux, Kali Linux.</dd></div>
+                    </dl>
+                </article>
+
+                <article class="skill-card spotlight reveal">
+                    <div class="skill-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h3>Services et outils</h3>
+                    <dl>
+                        <div><dt>Services de base</dt><dd>Active Directory, DHCP et DNS.</dd></div>
+                        <div><dt>Identité et accès</dt><dd>Authelia.</dd></div>
+                        <div><dt>Supervision et support</dt><dd>Centreon, GLPI.</dd></div>
+                        <div><dt>Gestion de sauvegarde</dt><dd>Bacula.</dd></div>
+                    </dl>
+                </article>
+
+                <article class="skill-card spotlight reveal">
+                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Développement et automatisation</h3>
+                    <dl>
+                        <div><dt>Programmation</dt><dd>Langage C (piscine Epitech).</dd></div>
+                        <div><dt>Développement web</dt><dd>PHP, HTML/CSS, JS, SQL.</dd></div>
+                        <div><dt>Versionning et déploiement</dt><dd>Git, gestion de domaine OVH.</dd></div>
+                        <div><dt>Automatisation</dt><dd>Planification de tâches avec CRON.</dd></div>
+                    </dl>
+                </article>
+
+                <article class="skill-card spotlight reveal">
+                    <div class="skill-icon"><i class="fa-solid fa-user-group"></i></div>
+                    <h3>Autres compétences</h3>
+                    <ul class="skill-simple">
+                        <li>Rédaction de documents techniques</li>
+                        <li>Support et accompagnement des utilisateurs</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 - Miran RAKOTOARIMANANA. Tous droits réservés. Conçu et développé par moi-même.</p>
+            <a href="#about" class="back-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Modals projets -->
+    <div class="modal-overlay" id="modal-stock" role="dialog" aria-modal="true" aria-labelledby="modal-stock-title">
         <div class="modal-container">
-            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <button class="modal-close" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-hero" style="background-image: url('asset/stock.webp');"></div>
             <div class="modal-header">
-                <div class="modal-badge">E5</div>
-                <h2>STOCK'UI</h2>
+                <div class="modal-badge">Alternance</div>
+                <h2 id="modal-stock-title">STOCK'UI</h2>
             </div>
             <div class="modal-body">
                 <div class="modal-section">
@@ -407,7 +334,7 @@
                 <div class="modal-section">
                     <div class="modal-section-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="modal-section-content">
-                        <h3>Réalisation en lien avec ma spécialité</h3>
+                        <h3>Réalisation</h3>
                         <ul>
                             <li>J'ai une infrastructure standardisée donc similaire à ASSUR'UI (environnement).</li>
                             <li>Transfert et mise en production de la structure de l'application via le client WinSCP.
@@ -419,14 +346,9 @@
                     <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
                     <div class="modal-section-content">
                         <h3>Technologies utilisées</h3>
-                        <div class="modal-badges">
-                            <span class="modal-skill-badge">VMWare ESXi</span>
-                            <span class="modal-skill-badge">LAMP</span>
-                            <span class="modal-skill-badge">Debian</span>
-                            <span class="modal-skill-badge">JavaScript</span>
-                            <span class="modal-skill-badge">HTML / CSS</span>
-                            <span class="modal-skill-badge">WinSCP</span>
-                        </div>
+                        <ul class="tags">
+                            <li>VMWare ESXi</li><li>LAMP</li><li>Debian</li><li>JavaScript</li><li>HTML / CSS</li><li>WinSCP</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="modal-section">
@@ -440,89 +362,17 @@
                         </ul>
                     </div>
                 </div>
-                <a href="https://drive.google.com/file/d/12HqhiWd7UBchbmmrpElVz9FM1A7G3sXP/view?usp=drive_link"
-                    target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
-                    document technique</a>
             </div>
         </div>
     </div>
 
-    <div class="modal-overlay" id="modal-assur">
+    <div class="modal-overlay" id="modal-bastion" role="dialog" aria-modal="true" aria-labelledby="modal-bastion-title">
         <div class="modal-container">
-            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <button class="modal-close" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-hero" style="background-image: url('asset/bastion.webp');"></div>
             <div class="modal-header">
-                <div class="modal-badge">E5</div>
-                <h2>ASSUR'UI</h2>
-            </div>
-            <div class="modal-body">
-                <div class="modal-section">
-                    <div class="modal-section-icon"><i class="fa-solid fa-bullseye"></i></div>
-                    <div class="modal-section-content">
-                        <h3>Contexte</h3>
-                        <p>Dans le cadre de mon alternance chez Orange, j'ai pu développer et déployer une application
-                            que
-                            j'ai nommée "ASSUR'UI" qui permet de suivre en temps réel la validité des assurances
-                            logicielles afin d'éviter le blocage des interventions techniques et de respecter les
-                            Garanties
-                            de Temps de Rétablissement (GTR).</p>
-                    </div>
-                </div>
-                <div class="modal-section">
-                    <div class="modal-section-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                    <div class="modal-section-content">
-                        <h3>Réalisation en lien avec ma spécialité</h3>
-                        <ul>
-                            <li>Déploiement d'une machine virtuelle sous Debian 12 via l'hyperviseur VMWare ESXi.</li>
-                            <li>Mise en place d'un environnement LAMP (Linux - Apache - MySQL - PHP).</li>
-                            <li>Isolation du serveur par segmentation dans un VLAN dédié.</li>
-                            <li>Authentification restrictive via les fichiers .htaccess et .htpasswd.</li>
-                            <li>Configuration de Zimbra mail sur OVH pour l'envoi des mails automatiques.</li>
-                            <li>Planification de tâches automatiques sur CRON pour l'exécution du script d'envoi de
-                                mail.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="modal-section">
-                    <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
-                    <div class="modal-section-content">
-                        <h3>Technologies utilisées</h3>
-                        <div class="modal-badges">
-                            <span class="modal-skill-badge">VMWare ESXi</span>
-                            <span class="modal-skill-badge">PHP</span>
-                            <span class="modal-skill-badge">Debian</span>
-                            <span class="modal-skill-badge">HTML/CSS</span>
-                            <span class="modal-skill-badge">Apache2</span>
-                            <span class="modal-skill-badge">MySQL</span>
-                            <span class="modal-skill-badge">DNS</span>
-                            <span class="modal-skill-badge">CRON</span>
-                            <span class="modal-skill-badge">VLAN</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-section">
-                    <div class="modal-section-icon"><i class="fa-solid fa-list-check"></i></div>
-                    <div class="modal-section-content">
-                        <h3>Compétences mobilisées</h3>
-                        <ul>
-                            <li>Gestion du patrimoine informatique.</li>
-                            <li>Mise à disposition d'un service informatique pour les utilisateurs.</li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="https://drive.google.com/file/d/1Nb8H0L4mBlIa6k0HspkBG7o1Yawq_bky/view?usp=drive_link"
-                    target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
-                    document technique</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="modal-bastion">
-        <div class="modal-container">
-            <button class="modal-close" aria-label="Fermer">&times;</button>
-            <div class="modal-header">
-                <div class="modal-badge">E5</div>
-                <h2>PROJET BASTION</h2>
+                <div class="modal-badge">Alternance</div>
+                <h2 id="modal-bastion-title">PROJET BASTION</h2>
             </div>
             <div class="modal-body">
                 <div class="modal-section">
@@ -539,7 +389,7 @@
                 <div class="modal-section">
                     <div class="modal-section-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="modal-section-content">
-                        <h3>Réalisation en lien avec ma spécialité</h3>
+                        <h3>Réalisation</h3>
                         <ul>
                             <li>Gestion de domaine avec duckDNS.</li>
                             <li>Configuration NAT/PAT sur la box internet de l'équipe.</li>
@@ -555,14 +405,9 @@
                     <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
                     <div class="modal-section-content">
                         <h3>Technologies utilisées</h3>
-                        <div class="modal-badges">
-                            <span class="modal-skill-badge">Opnsense</span>
-                            <span class="modal-skill-badge">Apache Guacamole</span>
-                            <span class="modal-skill-badge">Authelia</span>
-                            <span class="modal-skill-badge">HAproxy</span>
-                            <span class="modal-skill-badge">NAT/PAT</span>
-                            <span class="modal-skill-badge">Certbot</span>
-                        </div>
+                        <ul class="tags">
+                            <li>Opnsense</li><li>Apache Guacamole</li><li>Authelia</li><li>HAproxy</li><li>NAT/PAT</li><li>Certbot</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="modal-section">
@@ -575,33 +420,31 @@
                         </ul>
                     </div>
                 </div>
-                <a href="https://drive.google.com/file/d/1_9hJfRi7qaYnUF5TeB-rLSV7auDSYb0z/view?usp=drive_link"
-                    target="_blank" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Accéder au
-                    schéma réseau</a>
             </div>
         </div>
     </div>
 
-    <div class="modal-overlay" id="modal-jupiter">
+    <div class="modal-overlay" id="modal-jupiter" role="dialog" aria-modal="true" aria-labelledby="modal-jupiter-title">
         <div class="modal-container">
-            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <button class="modal-close" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-hero" style="background-image: url('asset/Jupiter.webp');"></div>
             <div class="modal-header">
-                <div class="modal-badge">E6</div>
-                <h2>PROJET JUPITER</h2>
+                <div class="modal-badge">École</div>
+                <h2 id="modal-jupiter-title">PROJET JUPITER</h2>
             </div>
             <div class="modal-body">
                 <div class="modal-section">
                     <div class="modal-section-icon"><i class="fa-solid fa-bullseye"></i></div>
                     <div class="modal-section-content">
                         <h3>Contexte</h3>
-                        <p>Dans le cadre du BTS SIO, nous avons simulé une entreprise (PME) pour pouvoir mettre en place
+                        <p>Dans le cadre de ma formation, nous avons simulé une entreprise (PME) pour pouvoir mettre en place
                             une infrastructure et un service informatique.</p>
                     </div>
                 </div>
                 <div class="modal-section">
                     <div class="modal-section-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="modal-section-content">
-                        <h3>Réalisation en lien avec ma spécialité</h3>
+                        <h3>Réalisation</h3>
                         <ul>
                             <li>Analyse de besoin d'une PME.</li>
                             <li>Comparaison et analyse des différentes solutions.</li>
@@ -620,16 +463,9 @@
                     <div class="modal-section-icon"><i class="fa-solid fa-cubes"></i></div>
                     <div class="modal-section-content">
                         <h3>Technologies utilisées</h3>
-                        <div class="modal-badges">
-                            <span class="modal-skill-badge">Proxmox</span>
-                            <span class="modal-skill-badge">Linux</span>
-                            <span class="modal-skill-badge">Windows</span>
-                            <span class="modal-skill-badge">Fortinet</span>
-                            <span class="modal-skill-badge">GLPI</span>
-                            <span class="modal-skill-badge">Centreon</span>
-                            <span class="modal-skill-badge">Bacula</span>
-                            <span class="modal-skill-badge">Suricata</span>
-                        </div>
+                        <ul class="tags">
+                            <li>Proxmox</li><li>Linux</li><li>Windows</li><li>Fortinet</li><li>GLPI</li><li>Centreon</li><li>Bacula</li><li>Suricata</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="modal-section">
@@ -643,16 +479,6 @@
                             <li>Mise à disposition d'un service informatique pour les utilisateurs.</li>
                         </ul>
                     </div>
-                </div>
-                <div style="display: flex; gap: 10px; margin-top: 1.5em; flex-wrap: wrap;">
-                    <a href="https://drive.google.com/file/d/1oj-sO9Q6NKJQTvnJgBliS99yPa8Snp6m/view?usp=drive_link"
-                        target="_blank" class="btn-drive"
-                        style="flex: 1; text-align: center; justify-content: center;"><i
-                            class="fa-solid fa-file-pdf"></i> Projet 1</a>
-                    <a href="https://drive.google.com/file/d/1nxeu6tIw_4LVANsDpUiLw7ILW_lotBTW/view?usp=drive_link"
-                        target="_blank" class="btn-drive"
-                        style="flex: 1; text-align: center; justify-content: center;"><i
-                            class="fa-solid fa-file-pdf"></i> Projet 2</a>
                 </div>
             </div>
         </div>
